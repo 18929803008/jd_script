@@ -4,7 +4,7 @@
  * @Last Modified by: ZXG
  * @Last Modified time: 2021-01-16 14:53:15
  * 
- * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_fruit.js
+ * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_fruit.js
  * 更新时间 2021-1-9
  * 最后更新时间 2021年1月16日 14:42:48
  */

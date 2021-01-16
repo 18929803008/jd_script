@@ -4,7 +4,7 @@
  * @Last Modified by: ZXG
  * @Last Modified time: 2021-01-16 15:19:47
  * 
- * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_jdzz.js
+ * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdzz.js
  * 最后更新时间 2021年1月16日 15:18:35
  */
 
