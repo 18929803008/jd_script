@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 23:08:33 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 23:09:51
+ * @Last Modified time: 2021-01-18 23:34:45
  * 
  * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js
  * 最后更新时间 2021年1月18日 23:08:59
@@ -19,11 +19,11 @@ let cookiesArr = [], cookie = '', message;
 
 // xin 1804768
 // 宝 2776603
-// ksy 
-// ksyd 
+// ksy 2797260
+// ksyd 2797395
 let inviteCodes = [
-  '1804768@2776603',
-  '1804768@2776603',
+  '1804768@2776603@2797260@2797395',
+  '1804768@2776603@2797260@2797395',
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
