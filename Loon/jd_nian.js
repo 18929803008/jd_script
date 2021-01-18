@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 14:00:42
+ * @Last Modified time: 2021-01-18 14:13:12
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
  * 更新时间 
@@ -34,14 +34,14 @@ if ($.isNode()) {
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
-// xin
-// 宝
+// xin cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE
+// 宝 cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo
 // ksy cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA
 // ksyd cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ
 
 const inviteCodes = [
-  `cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
-  `cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
+  `cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE@cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo@cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
+  `cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE@cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo@cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
 ];
 !(async () => {
   await requireConfig();
@@ -479,14 +479,14 @@ function getFriendData(inviteId) {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://code.chiang.fun/api/v1/jd/jdnian/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://code.chiang.fun/api/v1/jd/jdnian/read/0/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取0个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
