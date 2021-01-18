@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-16 15:27:07
+ * @Last Modified time: 2021-01-18 16:48:46
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
- * 最后更新时间 2021年1月16日 15:25:51
+ * 最后更新时间 2021年1月18日 16:42:17
  */
 
 const $ = new Env('签到领现金');
