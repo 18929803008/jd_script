@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 10:03:36
+ * @Last Modified time: 2021-01-18 13:41:20
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
  * 更新时间 
@@ -43,7 +43,8 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 // ksyd
 
 const inviteCodes = [
-  
+  '1',
+  '1',
 ];
 !(async () => {
   await requireConfig();
