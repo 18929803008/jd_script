@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 16:20:23 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:28:09
+ * @Last Modified time: 2021-01-18 17:19:35
  * 
  * 原作者地址 https://raw.githubusercontent.com/shylocks/Loon/main/jd_gyec.js
  * 更新时间 2021年1月18日 16:26:19
@@ -17,13 +17,13 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
 // 宝 2776603
 
-// ksy
+// ksy 2797260
 
-// ksyd
+// ksyd 2797395
 
 let inviteCodes = [
-  '1804768@2776603',
-  '1804768@2776603',
+  '1804768@2776603@2797260@2797395',
+  '1804768@2776603@2797260@2797395',
 ]
 let exchangeName = $.isNode() ? (process.env.EXCHANGE_GYEC ? process.env.EXCHANGE_GYEC : '1888京豆') : ($.getdata('JDGYEC') ? $.getdata('JDGYEC') : '1888京豆')
 //Node.js用户请在jdCookie.js处填写京东ck;
