@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:48:46
+ * @Last Modified time: 2021-01-18 23:23:07
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
  * 最后更新时间 2021年1月18日 16:42:17
@@ -42,6 +42,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     return;
   }
   await requireConfig()
+  await getAuthorShareCode();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -247,14 +248,14 @@ function showMsg() {
 function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
-    $.get({url: `https://code.chiang.fun/api/v1/jd/jdcash/read/${randomCount}/`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://code.chiang.fun/api/v1/jd/jdcash/read/0/`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取0个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
@@ -349,6 +350,26 @@ function taskUrl(functionId, body = {}) {
       'Accept-Encoding': 'gzip, deflate, br',
     }
   }
+}
+
+function getAuthorShareCode() {
+  return new Promise(resolve => {
+    $.get({url: "https://gitee.com/",headers:{
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+      }}, async (err, resp, data) => {
+      $.authorCode = [];
+      try {
+        if (err) {
+        } else {
+          $.authorCode = JSON.parse(data)
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve();
+      }
+    })
+  })
 }
 function TotalBean() {
   return new Promise(async resolve => {
