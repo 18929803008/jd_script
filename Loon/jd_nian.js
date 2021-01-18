@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 13:49:22
+ * @Last Modified time: 2021-01-18 14:00:42
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
  * 更新时间 
@@ -35,15 +35,13 @@ if ($.isNode()) {
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
 // xin
-
 // 宝
-
-// ksy 
-
-// ksyd
+// ksy cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA
+// ksyd cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ
 
 const inviteCodes = [
-  ``
+  `cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
+  `cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
 ];
 !(async () => {
   await requireConfig();
