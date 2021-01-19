@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:10:02 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:48:45
+ * @Last Modified time: 2021-01-19 10:35:21
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_dreamFactory.js
- * 最后更新时间 2021年1月18日 16:45:22
+ * 最后更新时间 2021年1月19日 10:35:21
  */
 
 
@@ -18,7 +18,16 @@ const randomCount = $.isNode() ? 20 : 5;
 let tuanActiveId = `kT3vGQUkO7hA1UCWWC-_0g==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = ['V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=@0WtCMPNq7jekehT6d3AbFw==', 'PDPM257r_KuQhil2Y7koNw==', "gB99tYLjvPcEFloDgamoBw==", '-OvElMzqeyeGBWazWYjI1Q==', 'GFwo6PntxDHH95ZRzZ5uAg=='];
+
+const inviteCodes = [
+  // xin 7cgl2Xm_soDzanE7bzNVdA==
+  // 宝 vuPgt-FKtWwBSRuB_yxNJw==
+  // ksy t0cC4d00k21nb7mS-skioA==
+  // ksyd 7D55VU2CUlCJ3m_4bd2mJg==
+  `7cgl2Xm_soDzanE7bzNVdA==@vuPgt-FKtWwBSRuB_yxNJw==@t0cC4d00k21nb7mS-skioA==@7D55VU2CUlCJ3m_4bd2mJg==`,
+  `7cgl2Xm_soDzanE7bzNVdA==@vuPgt-FKtWwBSRuB_yxNJw==@t0cC4d00k21nb7mS-skioA==@7D55VU2CUlCJ3m_4bd2mJg==`
+];
+
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 $.tuanIds = [];
 if ($.isNode()) {
@@ -1340,9 +1349,9 @@ function shareCodesFormat() {
 }
 function requireConfig() {
   return new Promise(async resolve => {
-    await updateTuanIdsCDN('https://gitee.com');
+    await updateTuanIdsCDN('https://gitee.com/lxk0301/updateTeam/raw/master/jd_updateFactoryTuanId.json');
     if (!$.tuanIdS) await updateTuanIds();
-    if (!$.tuanIdS) await updateTuanIdsCDN('https://cdn.jsdelivr.net/');
+    if (!$.tuanIdS) await updateTuanIdsCDN('https://gitee.com/lxk0301/updateTeam/raw/master/jd_updateFactoryTuanId.json');
     if ($.tuanIdS && $.tuanIdS.tuanActiveId) {
       tuanActiveId = $.tuanIdS.tuanActiveId;
     }

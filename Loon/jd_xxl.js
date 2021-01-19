@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 23:08:33 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 23:34:45
+ * @Last Modified time: 2021-01-19 10:43:49
  * 
  * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js
- * 最后更新时间 2021年1月18日 23:08:59
+ * 最后更新时间 2021年1月19日 10:43:53
  */
 
 const $ = new Env('东东爱消除');
@@ -382,9 +382,11 @@ function beginLevel() {
                 await $.wait(30000)
                 await endLevel()
               } else if (data.code === 20001) {
+                $.strength = 0
                 console.log(`关卡开启失败，体力不足`)
               } else {
-                console.log(`关卡开启失败，错误信息：${JSON.stringify(data)}`)
+                $.strength = 0
+                // console.log(`关卡开启失败，错误信息：${JSON.stringify(data)}`)
               }
             }
           }
@@ -504,7 +506,7 @@ function finishTask(taskId) {
                 }
                 console.log(msg)
               } else {
-                console.log(`任务完成失败，错误信息：${JSON.stringify(data)}`)
+                console.log(`暂无每日挑战任务`)
               }
             }
           }

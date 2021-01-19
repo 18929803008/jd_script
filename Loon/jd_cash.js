@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 23:54:26
+ * @Last Modified time: 2021-01-19 09:30:26
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
- * 最后更新时间 2021年1月18日 16:42:17
+ * 最后更新时间 2021年1月19日 09:29:25
  */
 
 const $ = new Env('签到领现金');
@@ -17,10 +17,16 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
 const randomCount = $.isNode() ? 20 : 5;
+
 const inviteCodes = [
+  // xin eU9YaezhZq8j9mbXz3RF1g
+  // 宝 eU9YaOzgYPR082eHmXoa0Q
+  // ksy eU9Yar7kYap38m_SmnRBgg
+  // ksyd eU9YKqzBMLZXhzyQsxpw
   `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
   `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
 ]
+
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])

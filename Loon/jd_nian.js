@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:50:44
+ * @Last Modified time: 2021-01-19 10:41:13
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
- * 更新时间 2021年1月18日 16:50:47
+ * 更新时间 2021年1月19日 10:41:17
  */
 
 
@@ -472,7 +472,7 @@ function getFriendData(inviteId) {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           data = JSON.parse(data);
-          if (data && data.data['bizCode'] === 0) {
+          if (data.data && data.data['bizCode'] === 0) {
             $.itemId = data.data.result.homeMainInfo.guestInfo.itemId
             await collectScore('2',$.itemId,null,inviteId)
           }

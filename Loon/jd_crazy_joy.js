@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:22:19 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:48:46
+ * @Last Modified time: 2021-01-19 09:31:42
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_crazy_joy.js
- * 最后更新时间 2021年1月18日 16:43:05
+ * 最后更新时间 2021年1月19日 09:31:53
  */
 
 
@@ -17,10 +17,16 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 let helpSelf = false // 循环助力，默认关闭
 let applyJdBean = 0; //疯狂的JOY京豆兑换，目前最小值为2000京豆，默认为 0 不开启京豆兑换
 let cookiesArr = [], cookie = '', message = '';
+
 const inviteCodes = [
+  // xin 4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE
+  // 宝 qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE
+  // ksy sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE
+  // ksyd 2AxO9_8nIcYf8ITfyXlpcg==
   '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
   '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
 ];
+
 const randomCount = $.isNode() ? 10 : 5;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {

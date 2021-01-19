@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:28:42 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 16:39:25
+ * @Last Modified time: 2021-01-19 09:30:20
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_bookshop.js
- * 最后更新时间 2021年1月18日 16:38:58
+ * 最后更新时间 2021年1月19日 09:26:35
  */
 
 
@@ -21,6 +21,10 @@ ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS
 // 加入购物车开关，与东东小窝共享
 
 let inviteCodes = [
+  // xin 1ca580746847454f851808856db7e565
+  // 宝 753bbeeac19c447f9358455e444d0de3
+  // ksy 9938133d5dc24454ab3a432564fd7e7c
+  // ksyd 41c71dfe7059417da809d45cb237c9d0
   '1ca580746847454f851808856db7e565@753bbeeac19c447f9358455e444d0de3@9938133d5dc24454ab3a432564fd7e7c@41c71dfe7059417da809d45cb237c9d0',
   '1ca580746847454f851808856db7e565@753bbeeac19c447f9358455e444d0de3@9938133d5dc24454ab3a432564fd7e7c@41c71dfe7059417da809d45cb237c9d0',
 ]
