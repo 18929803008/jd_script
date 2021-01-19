@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 16:20:23 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-19 10:38:12
+ * @Last Modified time: 2021-01-19 15:08:38
  * 
  * 原作者地址 https://raw.githubusercontent.com/shylocks/Loon/main/jd_gyec.js
- * 更新时间 2021年1月19日 10:38:14
+ * 更新时间 2021年1月19日 15:08:46
  */
 
 
@@ -104,7 +104,9 @@ async function jdGy(help = true) {
   await getActInfo()
   await getTaskList()
   await getDailyMatch()
-  if (help) await helpFriends()
+  if (help) {
+    await helpFriends()
+  }
   // await marketGoods()
 }
 
@@ -222,6 +224,14 @@ function checkLogin() {
             $.gameToken = data.token
             $.strength = data.role.items['8003']
             console.log(`当前体力：${$.strength}`)
+            $.not3Star = []
+            for(let level of data.role.allLevels){
+              if(level.maxStar!==3){
+                $.not3Star.push(level.id)
+              }
+            }
+            if($.not3Star.length)
+              console.log(`当前尚未三星的关卡为：${$.not3Star.join(',')}`)
             // SecrectUtil.InitEncryptInfo($.gameToken, $.gameId)
           }
         }
@@ -256,6 +266,14 @@ function getTaskList() {
                   console.log(`当前关卡：${$.level}`)
                   while ($.strength >= 5) {
                     await beginLevel()
+                  }
+                  if($.not3Star.length){
+                    console.log(`去完成尚未三星的关卡`)
+                    for(let level of $.not3Star){
+                      $.level = parseInt(level)
+                      await beginLevel()
+                      if($.strength<5) break
+                    }
                   }
                 } else if (task.res.sName === "逛逛店铺" || task.res.sName === "浏览会场") {
                   if (task.state.iFreshTimes < task.res.iFreshTimes)
@@ -669,7 +687,7 @@ function getDailyMatch() {
                   await beginDailyMatch()
                 }
               } else {
-                console.log(`关卡开启失败，错误信息：${JSON.stringify(data)}`)
+                console.log(`暂无每日挑战任务`)
               }
             }
           }
