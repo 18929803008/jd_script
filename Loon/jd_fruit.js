@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:42:09 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 15:17:10
+ * @Last Modified time: 2021-01-21 00:10:44
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_fruit.js
- * 最后更新时间 2021年1月20日 09:24:13
+ * 最后更新时间 2021年1月21日 00:10:43
  */
 
 const $ = new Env('东东农场');

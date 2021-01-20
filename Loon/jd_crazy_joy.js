@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:22:19 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 15:14:37
+ * @Last Modified time: 2021-01-21 00:06:58
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_crazy_joy.js
- * 最后更新时间 2021年1月20日 15:14:45
+ * 最后更新时间 2021年1月21日 00:07:04
  */
 
 
@@ -26,7 +26,6 @@ const inviteCodes = [
   '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
   '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
 ];
-
 
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
