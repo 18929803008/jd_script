@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 23:08:33 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 13:10:59
+ * @Last Modified time: 2021-01-20 15:24:28
  * 
  * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js
- * 最后更新时间 2021年1月20日 09:22:05
+ * 最后更新时间 2021年1月20日 15:24:32
  */
 
 const $ = new Env('东东爱消除');
