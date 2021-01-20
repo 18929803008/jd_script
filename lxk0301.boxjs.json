@@ -474,12 +474,26 @@
         "jd_plantBean1",
         "jd_plantBean2",
         "jd_plantBean3",
+        "jd_plantBean4",
+        "jd_plantBean5",
+        "jd_plantBean6",
+        "jd_plantBean7",
+        "jd_plantBean8",
+        "jd_plantBean9",
+        "jd_plantBean10",
         "jd2_plant_bean_name",
         "jd2_plantBean1",
         "jd2_plantBean2",
-        "jd2_plantBean3"
-      ],
-      "settings": [
+        "jd2_plantBean3",
+        "jd2_plantBean4",
+        "jd2_plantBean5",
+        "jd2_plantBean6",
+        "jd2_plantBean7",
+        "jd2_plantBean8",
+        "jd2_plantBean9",
+        "jd2_plantBean10"
+    ],
+    "settings": [
         {
           "id": "jdPlantBeanNotify",
           "name": "静默运行",
