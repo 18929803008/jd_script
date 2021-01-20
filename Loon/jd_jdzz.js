@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:17:51 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-19 10:45:52
+ * @Last Modified time: 2021-01-20 09:26:28
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdzz.js
- * 最后更新时间 2021年1月19日 10:40:29
+ * 最后更新时间 2021年1月20日 09:26:27
  */
 
 const $ = new Env('京东赚赚');

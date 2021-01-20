@@ -1,18 +1,19 @@
 /*
  * @Author: ZXG https://github.com/xin-code 
- * @Date: 2021-01-18 23:08:33 
+ * @Date: 2021-01-20 08:49:19 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 09:22:02
+ * @Last Modified time: 2021-01-20 08:55:50
  * 
- * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl.js
- * 最后更新时间 2021年1月20日 09:22:05
+ * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl_gh.js
+ * 最后更新时间 2021年1月20日 08:49:39
  */
 
-const $ = new Env('东东爱消除');
+const $ = new Env('个护爱消除');
 const notify = $.isNode() ? require('./sendNotify.js') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let exchangeName = $.isNode() ? (process.env.EXCHANGE_EC ? process.env.EXCHANGE_EC : '京豆*1888') : ($.getdata('JDEC') ? $.getdata('JDEC') : '京豆*1888')
 
+let ACT_ID = 'A_112790_R_3_D_20201102'
 //Node.js用户请在jdCookie.js处填写京东ck;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
