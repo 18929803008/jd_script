@@ -73,6 +73,8 @@
         "jd_fruit6",
         "jd_fruit7",
         "jd_fruit8",
+        "jd_fruit9",
+        "jd_fruit10",
         "jd2_fruit_name",
         "jd2_fruit1",
         "jd2_fruit2",
@@ -81,7 +83,9 @@
         "jd2_fruit5",
         "jd2_fruit6",
         "jd2_fruit7",
-        "jd2_fruit8"
+        "jd2_fruit8",
+        "jd2_fruit9",
+        "jd2_fruit10"
       ],
       "descs_html": [
         "<h4 align=\"center\">获取Cookie请查看NobyDa京东签到脚本说明<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>"
@@ -158,6 +162,27 @@
           "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         },
         {
+          "id": "jd_fruit8",
+          "name": "账号一的互助码8",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_fruit9",
+          "name": "账号一的互助码9",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_fruit10",
+          "name": "账号一的互助码10",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
           "id": "jd2_fruit_name",
           "name": "京东账号二昵称",
           "val": "",
@@ -212,6 +237,27 @@
           "val": "",
           "type": "text",
           "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_fruit8",
+          "name": "账号二的互助码8",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_fruit9",
+          "name": "账号二的互助码9",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_fruit10",
+          "name": "账号二的互助码10",
+          "val": "",
+          "type": "text",
+          "desc": "京东水果互助码.这是别人的shareCode,你帮别人助力."
         }
       ],
       "author": "@LXK9301",
@@ -232,12 +278,22 @@
         "jd_pet3",
         "jd_pet4",
         "jd_pet5",
+        "jd_pet6",
+        "jd_pet7",
+        "jd_pet8",
+        "jd_pet9",
+        "jd_pet10",
         "jd2_pet_name",
         "jd2_pet1",
         "jd2_pet2",
         "jd2_pet3",
         "jd2_pet4",
-        "jd2_pet5"
+        "jd2_pet5",
+        "jd2_pet6",
+        "jd2_pet7",
+        "jd2_pet8",
+        "jd2_pet9",
+        "jd2_pet10"
       ],
       "settings": [
         {
@@ -290,6 +346,41 @@
           "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
         },
         {
+          "id": "jd_pet6",
+          "name": "互助码6",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_pet7",
+          "name": "互助码7",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_pet8",
+          "name": "互助码8",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_pet9",
+          "name": "互助码9",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd_pet10",
+          "name": "互助码10",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
           "id": "jd2_pet_name",
           "name": "京东账号2昵称",
           "val": "",
@@ -327,6 +418,41 @@
         {
           "id": "jd2_pet5",
           "name": "账号二互助码5",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_pet6",
+          "name": "账号二互助码6",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_pet7",
+          "name": "账号二互助码7",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_pet8",
+          "name": "账号二互助码8",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_pet9",
+          "name": "账号二互助码9",
+          "val": "",
+          "type": "text",
+          "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
+        },
+        {
+          "id": "jd2_pet10",
+          "name": "账号二互助码10",
           "val": "",
           "type": "text",
           "desc": "东东萌宠互助码.这是别人的shareCode,你帮别人助力."
