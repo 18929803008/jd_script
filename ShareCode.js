@@ -2,7 +2,7 @@
  * @Author: ZXG 
  * @Date: 2020-12-04 13:45:04 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 09:37:24
+ * @Last Modified time: 2021-01-20 21:10:27
  */
 
 
@@ -11,13 +11,28 @@ https://t.me/TuringLabbot
 https://t.me/LvanLamCommitCodeBot
 
 &TuringLabbot
+/*
+互助码提交格式(以种豆得豆为例子 
+/submit_bean_code 互助码&互助码
+*/
 /submit_bean_code - 提交种豆得豆互助码
 /submit_farm_code - 提交东东农场互助码
 /submit_pet_code -  提交东东萌宠互助码
 /submit_jxfactory_code - 提交京喜工厂互助码
 /submit_ddfactory_code - 提交东东工厂互助码
 
+/*
+临时活动提交助力格式
+/submit_temp_code 活动名 助力码&助力码
+ */
+/submit_temp_code - 临时活动
+
+
+
 &LvanLamCommitCodeBot
+/*
+/jdzz 互助码&互助码
+*/
 /jdcash - JD签到领现金 提交助力码
 /jdcrazyjoy - JD疯狂的小狗 提交助力码
 /jdnh - JD年货 提交助力码
