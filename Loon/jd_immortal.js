@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-20 15:25:14
+ * @Last Modified time: 2021-01-20 20:32:52
  * 
  * 原作者脚本地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_immortal.js
  * 最后更新时间 2021年1月20日 14:53:13
@@ -34,11 +34,11 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 
 // xin 43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg
 // 宝 43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg
-// ksy 
-// ksyd 
+// ksy 43xIs4YwE5Z7DsWOzDSPOhIET7W2lnzQ1OkP58XpzD_QGEcZB9wBYFiGh_UOtRNzfVNg
+// ksyd 40xIs4YwE5Z7DsWOzDCO6VpRvC6NWADQSIr9b5ScPITcZB9gAQg2XRJ7W-roGNr
 const inviteCodes = [
-  `43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg@43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg`,
-  `43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg@43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg`,
+  `43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg@43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg@43xIs4YwE5Z7DsWOzDSPOhIET7W2lnzQ1OkP58XpzD_QGEcZB9wBYFiGh_UOtRNzfVNg@40xIs4YwE5Z7DsWOzDCO6VpRvC6NWADQSIr9b5ScPITcZB9gAQg2XRJ7W-roGNr`,
+  `43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg@43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg@43xIs4YwE5Z7DsWOzDSPOhIET7W2lnzQ1OkP58XpzD_QGEcZB9wBYFiGh_UOtRNzfVNg@40xIs4YwE5Z7DsWOzDCO6VpRvC6NWADQSIr9b5ScPITcZB9gAQg2XRJ7W-roGNr`,
 ];
 !(async () => {
   await requireConfig();
