@@ -2,10 +2,27 @@
  * @Author: ZXG 
  * @Date: 2020-12-04 13:45:04 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-18 15:41:34
+ * @Last Modified time: 2021-01-20 09:37:24
  */
 
 
+Bot网址：
+https://t.me/TuringLabbot
+https://t.me/LvanLamCommitCodeBot
+
+&TuringLabbot
+/submit_bean_code - 提交种豆得豆互助码
+/submit_farm_code - 提交东东农场互助码
+/submit_pet_code -  提交东东萌宠互助码
+/submit_jxfactory_code - 提交京喜工厂互助码
+/submit_ddfactory_code - 提交东东工厂互助码
+
+&LvanLamCommitCodeBot
+/jdcash - JD签到领现金 提交助力码
+/jdcrazyjoy - JD疯狂的小狗 提交助力码
+/jdnh - JD年货 提交助力码
+/jdzz - JD赚赚 提交助力码
+/jdnian - JD炸年兽 提交助力码
 
 
  // ——————————————————————————————Turing Lab Bot——————————————————————————————
