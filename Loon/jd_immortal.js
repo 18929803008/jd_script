@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 00:09:18
+ * @Last Modified time: 2021-01-21 10:56:31
  * 
  * 原作者脚本地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_immortal.js
  * 最后更新时间 2021年1月21日 00:09:26
@@ -14,6 +14,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
+const randomCount = $.isNode() ? 20 : 0;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {

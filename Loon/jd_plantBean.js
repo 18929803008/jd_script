@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:45:29 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 00:13:29
+ * @Last Modified time: 2021-01-21 10:57:35
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_plantBean.js
  * 最后更新时间 2021年1月21日 00:13:36
@@ -29,6 +29,7 @@ let currentRoundId = null;//本期活动id
 let lastRoundId = null;//上期id
 let roundList = [];
 let awardState = '';//上期活动的京豆是否收取
+let randomCount = $.isNode() ? 20 : 0;
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
