@@ -1324,7 +1324,7 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
-        console.log('把内置码1推送到Boxjs后面');
+        console.log('✅已经把脚本内置码1推送到Boxjs后面');
         temp.push(shareCodes[0])
         jdFruitShareArr.push(temp.join('@'));
       }
@@ -1335,7 +1335,7 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
-        console.log('把内置码2推送到Boxjs后面');
+        console.log('✅已经把脚本内置码2推送到Boxjs后面');
         temp.push(shareCodes[1])
         jdFruitShareArr.push(temp.join('@'));
       }
