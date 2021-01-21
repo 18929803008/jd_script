@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:42:09 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 10:50:32
+ * @Last Modified time: 2021-01-21 11:28:59
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_fruit.js
  * 最后更新时间 2021年1月21日 10:50:37
@@ -15,9 +15,9 @@ let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, n
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675',
+  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  '554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675',
+  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
@@ -763,7 +763,8 @@ async function clockInIn() {
 //
 async function getAwardInviteFriend() {
   await friendListInitForFarm();//查询好友列表
-  console.log(`查询好友列表数据：${JSON.stringify($.friendList)}\n`)
+  console.log(`查询好友列表中···,数据不展示···`);
+  // console.log(`查询好友列表数据：${JSON.stringify($.friendList)}\n`)
   if ($.friendList) {
     console.log(`\n今日已邀请好友${$.friendList.inviteFriendCount}个 / 每日邀请上限${$.friendList.inviteFriendMax}个`);
     console.log(`开始删除${$.friendList.friends && $.friendList.friends.length}个好友,可拿每天的邀请奖励`);
@@ -1323,6 +1324,8 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
+        console.log('把内置码1推送到Boxjs后面');
+        temp.push(shareCodes[0])
         jdFruitShareArr.push(temp.join('@'));
       }
       if (isBox2) {
@@ -1332,6 +1335,8 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
+        console.log('把内置码2推送到Boxjs后面');
+        temp.push(shareCodes[1])
         jdFruitShareArr.push(temp.join('@'));
       }
     }
