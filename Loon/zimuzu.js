@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-22 14:13:41 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-22 14:15:08
+ * @Last Modified time: 2021-01-22 14:18:56
  * 
  * 原作者地址:https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.js
  * 最后更新时间 2021年1月22日 14:14:02
@@ -75,7 +75,7 @@ function showmsg() {
     $.subt = ''
     $.desc = ''
     // app
-    $.subt += '; APP: '
+    $.subt += '✅ APP: '
     if ($.app.status == 1) $.subt += '成功'
     else if ($.app.status == 4005) $.subt += '成功 (重复)'
     else if ($.app.status == 1021) $.subt += '未登录'
