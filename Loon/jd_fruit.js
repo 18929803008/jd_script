@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:42:09 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 11:28:59
+ * @Last Modified time: 2021-01-23 09:06:20
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_fruit.js
- * 最后更新时间 2021年1月21日 10:50:37
+ * 最后更新时间 2021年1月23日 09:05:50
  */
 
 const $ = new Env('东东农场');
@@ -763,7 +763,7 @@ async function clockInIn() {
 //
 async function getAwardInviteFriend() {
   await friendListInitForFarm();//查询好友列表
-  console.log(`查询好友列表中···,数据不展示···`);
+  console.log(`查询好友列表中···数据不展示···`);
   // console.log(`查询好友列表数据：${JSON.stringify($.friendList)}\n`)
   if ($.friendList) {
     console.log(`\n今日已邀请好友${$.friendList.inviteFriendCount}个 / 每日邀请上限${$.friendList.inviteFriendMax}个`);

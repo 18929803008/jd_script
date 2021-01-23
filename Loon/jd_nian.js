@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 10:57:05
+ * @Last Modified time: 2021-01-23 09:12:37
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
- * 更新时间 2021年1月21日 00:12:37
+ * 更新时间 2021年1月23日 09:12:36
  */
 
 
@@ -831,7 +831,7 @@ function readShareCode() {
         resolve(data);
       }
     })
-    await $.wait(2000);
+    await $.wait(10000);
     resolve()
   })
 }

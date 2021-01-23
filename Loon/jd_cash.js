@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 00:04:42
+ * @Last Modified time: 2021-01-23 09:02:12
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
- * 最后更新时间 2021年1月21日 00:04:45
+ * 最后更新时间 2021年1月23日 09:02:28
  */
 
 const $ = new Env('签到领现金');
@@ -16,6 +16,7 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = true;
+const randomCount = $.isNode() ? 20 : 0;
 const inviteCodes = [
   // xin eU9YaezhZq8j9mbXz3RF1g
   // 宝 eU9YaOzgYPR082eHmXoa0Q
@@ -358,8 +359,8 @@ function taskUrl(functionId, body = {}) {
 
 function getAuthorShareCode() {
   return new Promise(resolve => {
-    $.get({url: "https://gitee.com/xinx1201/jd_script/raw/master/updateTeam/jd_cash.json",headers:{        
-      "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+    $.get({url: "https://gitee.com/xinx1201/jd_script/raw/master/updateTeam/jd_cash.json",headers:{
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
       }}, async (err, resp, data) => {
       $.authorCode = [];
       try {

@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 10:56:31
+ * @Last Modified time: 2021-01-23 09:08:58
  * 
  * 原作者脚本地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_immortal.js
- * 最后更新时间 2021年1月21日 00:09:26
+ * 最后更新时间 2021年1月23日 09:08:57
  */
 
 const $ = new Env('京东神仙书院');

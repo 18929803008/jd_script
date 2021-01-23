@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 16:20:23 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 00:05:38
+ * @Last Modified time: 2021-01-23 09:08:02
  * 
  * 原作者地址 https://raw.githubusercontent.com/shylocks/Loon/main/jd_gyec.js
- * 更新时间 2021年1月21日 00:05:43
+ * 更新时间 2021年1月23日 09:08:02
  */
 
 
@@ -95,16 +95,21 @@ function obj2param(obj) {
 
 async function jdGy(help = true) {
   $.reqId = 1
-  await getIsvToken()
-  await getIsvToken2()
-  await getActInfo()
-  await getTaskList()
-  await getDailyMatch()
-  if (help) {
-    await helpFriends()
+  try{
+    await getIsvToken()
+    await getIsvToken2()
+    await getActInfo()
+    await getTaskList()
+    await getDailyMatch()
+    if (help) {
+      await helpFriends()
+    }
+    // await marketGoods()
+    await play()
   }
-  // await marketGoods()
-  await play()
+  catch (e) {
+    console.log(e)
+  }
 }
 
 async function helpFriends() {

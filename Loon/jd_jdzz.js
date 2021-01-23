@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:17:51 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 10:56:55
+ * @Last Modified time: 2021-01-23 09:10:58
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdzz.js
- * 最后更新时间 2021年1月21日 00:12:04
+ * 最后更新时间 2021年1月23日 09:11:01
  */
 
 const $ = new Env('京东赚赚');
@@ -40,8 +40,6 @@ const inviteCodes = [
 !(async () => {
   $.tuanList = []
   await requireConfig();
-  if (helpAuthor) await getAuthorShareCode('https://gitee.com/shylocks/updateTeam/raw/main/jd_zz.json');
-  if (helpAuthor) await getAuthorShareCode('https://gitee.com/lxk0301/updateTeam/raw/master/jd_zz.json');
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;

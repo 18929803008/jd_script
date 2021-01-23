@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:55:48 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-21 10:56:41
+ * @Last Modified time: 2021-01-23 09:09:59
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdfactory.js
- * 最后更新时间 2021年1月21日 00:11:25
+ * 最后更新时间 2021年1月23日 09:10:04
  */
 
 const $ = new Env('东东工厂');
@@ -22,6 +22,7 @@ if ($.isNode()) {
     cookiesArr.push(jdCookieNode[item])
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
+  if (process.env.JDFACTORY_FORBID_ACCOUNT) process.env.JDFACTORY_FORBID_ACCOUNT.split('&').map((item, index) => Number(item) === 0 ? cookiesArr = [] : cookiesArr.splice(Number(item) - 1 - index, 1))
 } else {
   let cookiesData = $.getdata('CookiesJD') || "[]";
   cookiesData = jsonParse(cookiesData);
@@ -33,7 +34,10 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [`T0225KkcRR5K9QfSJxL2kPBcdACjVWnYaS5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWnYaS5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWnYaS5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWnYaS5kRrbA`, 'T0225KkcRR5K9QfSJxL2kPBcdACjVWnYaS5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWnYaS5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWnYaS5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWnYaS5kRrbA'];
+const inviteCodes = [
+  `T0225KkcRR5K9QfSJxL2kPBcdACjVWnYaS5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWnYaS5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWnYaS5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWnYaS5kRrbA`, 
+  `T0225KkcRR5K9QfSJxL2kPBcdACjVWnYaS5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWnYaS5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWnYaS5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWnYaS5kRrbA`
+];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
