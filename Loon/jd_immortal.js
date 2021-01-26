@@ -2,10 +2,12 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:43:52
+ * @Last Modified time: 2021-01-26 11:15:41
  * 
  * 原作者脚本地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_immortal.js
- * 最后更新时间 2021年1月25日 08:43:51
+ * 活动入口:京东app-我的-神仙书院
+ * 活动时间:2021-1-20至2021-2-5
+ * 最后更新时间 2021年1月26日 11:15:19
  */
 
 const $ = new Env('京东神仙书院');

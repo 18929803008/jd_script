@@ -2,10 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-22 10:33:44 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:46:25
+ * @Last Modified time: 2021-01-26 11:18:16
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian_ar.js
- * 最后更新时间 2021年1月25日 08:46:24
+ * 活动时间:2021-1-18至2021-2-11
+ * 最后更新时间 2021年1月26日 11:18:15
  */
 
 const $ = new Env('京东炸年兽AR');

@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:17:51 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:45:37
+ * @Last Modified time: 2021-01-26 11:17:24
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdzz.js
- * 最后更新时间 2021年1月25日 08:45:36
+ * 最后更新时间 2021年1月26日 11:17:28
  */
 
 const $ = new Env('京东赚赚');
@@ -189,14 +189,15 @@ function getUserTuanInfo() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            if (!data.data.canStartNewAssist)
+            if (data.data && !data.data.canStartNewAssist) {
               $.tuan = {
                 "activityIdEncrypted": data.data.id,
                 "assistStartRecordId": data.data.assistStartRecordId,
                 "assistedPinEncrypted": data.data.encPin,
                 "channel": "FISSION_BEAN"
               }
-            $.tuanActId = data.data.id
+              $.tuanActId = data.data.id
+            }
           }
         }
       } catch (e) {
@@ -246,7 +247,7 @@ function getUserInfo() {
             if (data.data.shareTaskRes) {
               console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${data.data.shareTaskRes.itemId}\n`);
             } else {
-              console.log(`已满5人助力,暂时看不到您的${$.name}好友助力码`)
+              console.log(`\n\n已满5人助力或助力功能已下线,故暂时无${$.name}好友助力码\n\n`)
             }
           }
         }

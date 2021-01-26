@@ -2,10 +2,12 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:40:20
+ * @Last Modified time: 2021-01-26 11:05:14
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
- * 最后更新时间 2021年1月25日 08:40:19
+ * 可互助，助力码每日不变，只变日期
+ * 结束时间 未知
+ * 最后更新时间 2021年1月26日 11:02:47
  */
 
 const $ = new Env('签到领现金');
@@ -15,7 +17,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-let helpAuthor = true;
+let helpAuthor = false;
 const randomCount = $.isNode() ? 20 : 0;
 const inviteCodes = [
   // xin eU9YaezhZq8j9mbXz3RF1g
@@ -47,7 +49,6 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     return;
   }
   await requireConfig()
-  await getAuthorShareCode();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -357,25 +358,6 @@ function taskUrl(functionId, body = {}) {
   }
 }
 
-function getAuthorShareCode() {
-  return new Promise(resolve => {
-    $.get({url: "https://gitee.com/xinx1201/jd_script/raw/master/updateTeam/jd_cash.json",headers:{
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
-      }}, async (err, resp, data) => {
-      $.authorCode = [];
-      try {
-        if (err) {
-        } else {
-          $.authorCode = JSON.parse(data)
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
