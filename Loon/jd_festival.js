@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-26 11:30:36 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 15:52:38
+ * @Last Modified time: 2021-01-26 19:28:09
  * 原作者地址：https://raw.githubusercontent.com/shylocks/Loon/main/jd_festival.js
  * 活动时间：2021年1月26日～2021年2月8日
  * 最后更新时间 2021年1月26日 15:52:41
@@ -20,10 +20,10 @@ const randomCount = $.isNode() ? 0 : 0;
 const inviteCodes = [
   // xin 063da3cf-df86-4fef-bbca-feb15c831c37
   // 宝 fad79864-a7c0-4e52-aea6-b227fa527d40
-  // ksy
-  // ksyd
-  `063da3cf-df86-4fef-bbca-feb15c831c37@fad79864-a7c0-4e52-aea6-b227fa527d40`,
-  `063da3cf-df86-4fef-bbca-feb15c831c37@fad79864-a7c0-4e52-aea6-b227fa527d40`,
+  // ksy 6b462404-4e9d-422a-b517-ff6dcdca0dee
+  // ksyd d21a5bc8-b50d-473b-bcfe-d143f1d8dedc
+  `063da3cf-df86-4fef-bbca-feb15c831c37@fad79864-a7c0-4e52-aea6-b227fa527d40@6b462404-4e9d-422a-b517-ff6dcdca0dee@d21a5bc8-b50d-473b-bcfe-d143f1d8dedc`,
+  `063da3cf-df86-4fef-bbca-feb15c831c37@fad79864-a7c0-4e52-aea6-b227fa527d40@6b462404-4e9d-422a-b517-ff6dcdca0dee@d21a5bc8-b50d-473b-bcfe-d143f1d8dedc`,
 ];
 
 if ($.isNode()) {

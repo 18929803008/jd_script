@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-26 19:10:44 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 19:13:24
+ * @Last Modified time: 2021-01-26 19:27:20
  * 
  * 原作者地址：
  * 最后更新时间 2021年1月26日 19:10:53
@@ -16,8 +16,10 @@ let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
   // xin T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA
   // 宝 T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA
-  `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA`,
-  `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA`,
+  // ksy T0225KkcRkxP8gKGIxvzxfBYIACjVWmIaW5kRrbA
+  // ksyd T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA
+  `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWmIaW5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA`,
+  `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWmIaW5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA`,
 ];
 const randomCount = $.isNode() ? 0 : 0;
 const notify = $.isNode() ? require('./sendNotify') : '';
