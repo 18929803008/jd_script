@@ -2,10 +2,10 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-26 11:30:36 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 13:51:05
+ * @Last Modified time: 2021-01-26 15:52:38
  * 原作者地址：https://raw.githubusercontent.com/shylocks/Loon/main/jd_festival.js
  * 活动时间：2021年1月26日～2021年2月8日
- * 最后更新时间 2021年1月26日 12:59:58
+ * 最后更新时间 2021年1月26日 15:52:41
  */
 
 const $ = new Env('京东手机年终奖');
@@ -504,7 +504,7 @@ function taskPostUrl(function_id, body = {}) {
       'dnt': '1',
       'pragma': 'no-cache',
       'sign': sign(n, `d55b480bed0545839dbd8b78b6cffdb1${t}`, `/sf/${function_id}`),
-      'timestamp': t,
+      'timestamp': ($.isQuanX()||$.isSurge()) ?t.toString():t,
       "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.141"
     )
     }
@@ -538,7 +538,7 @@ function taskUrl(function_id, body = {}) {
       'dnt': '1',
       'pragma': 'no-cache',
       'sign': sign(n, `d55b480bed0545839dbd8b78b6cffdb1${t}`, `/sf/${function_id}`),
-      'timestamp': t,
+      'timestamp': ($.isQuanX()||$.isSurge()) ?t.toString():t,
       "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.141"
     }
   }
