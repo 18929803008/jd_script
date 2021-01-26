@@ -2,10 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:22:19 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-23 09:03:17
+ * @Last Modified time: 2021-01-26 11:13:19
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_crazy_joy.js
- * 最后更新时间 2021年1月23日 09:03:19
+ * 结束时间 未知
+ * 最后更新时间 2021年1月26日 11:13:18
  */
 
 
@@ -166,7 +167,7 @@ if ($.isNode()) {
     return;
   }
   await requireConfig();
-  $.nextCode = ["EdLPh8A6X5G1iWXu-uPYfA==", "nCQQXQHKGjPCb7jkd8q2U-aCTjZMxL3s"];
+  $.nextCode = ["4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE", "qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE"];
   $.nextCode = $.nextCode[randomNumber(0, $.nextCode.length)];
   $.selfCodes = []
   for (let i = 0; i < cookiesArr.length; i++) {

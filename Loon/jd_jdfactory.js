@@ -2,10 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 14:55:48 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-23 09:09:59
+ * @Last Modified time: 2021-01-26 11:16:29
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_jdfactory.js
- * 最后更新时间 2021年1月23日 09:10:04
+ * 结束时间 未知
+ * 最后更新时间 2021年1月26日 11:16:28
  */
 
 const $ = new Env('东东工厂');

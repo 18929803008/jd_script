@@ -2,10 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:10:02 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-23 09:04:13
+ * @Last Modified time: 2021-01-26 11:14:51
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_dreamFactory.js
- * 最后更新时间 2021年1月23日 09:04:13
+ * 活动入口 :京东APP->游戏与互动->查看更多->京喜工厂
+ * 最后更新时间 2021年1月26日 11:14:50
  */
 
 
