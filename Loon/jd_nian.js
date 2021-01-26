@@ -2,7 +2,7 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 18:20:37
+ * @Last Modified time: 2021-01-26 18:36:08
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
  * 更新时间 2021年1月23日 09:12:36
@@ -15,7 +15,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 0;
+const randomCount = $.isNode() ? 0 : 0;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -43,6 +43,12 @@ const inviteCodes = [
   `cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE@cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo@cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
   `cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE@cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo@cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
 ];
+const pkInviteCodes = [
+  // xin IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs
+  // 宝 IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2
+  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2`,
+  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2`,
+]
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
