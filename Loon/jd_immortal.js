@@ -2,12 +2,12 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 11:15:41
+ * @Last Modified time: 2021-01-27 13:03:32
  * 
  * 原作者脚本地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_immortal.js
  * 活动入口:京东app-我的-神仙书院
  * 活动时间:2021-1-20至2021-2-5
- * 最后更新时间 2021年1月26日 11:15:19
+ * 最后更新时间 2021年1月27日 12:52:51
  */
 
 const $ = new Env('京东神仙书院');
@@ -16,7 +16,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 0;
+const randomCount = $.isNode() ? 0 : 0;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {

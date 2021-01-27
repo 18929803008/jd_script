@@ -2,11 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-22 10:33:44 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 11:18:16
+ * @Last Modified time: 2021-01-27 11:21:43
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian_ar.js
  * 活动时间:2021-1-18至2021-2-11
- * 最后更新时间 2021年1月26日 11:18:15
+ * 最后更新时间 2021年1月27日 11:21:42
  */
 
 const $ = new Env('京东炸年兽AR');
@@ -15,7 +15,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 0;
+const randomCount = $.isNode() ? 0 : 0;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {

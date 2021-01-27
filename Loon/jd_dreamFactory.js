@@ -2,11 +2,11 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:10:02 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 11:14:51
+ * @Last Modified time: 2021-01-27 12:49:08
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_dreamFactory.js
  * 活动入口 :京东APP->游戏与互动->查看更多->京喜工厂
- * 最后更新时间 2021年1月26日 11:14:50
+ * 最后更新时间 2021年1月27日 11:12:36
  */
 
 
@@ -15,7 +15,7 @@ const JD_API_HOST = 'https://m.jingxi.com';
 
 const notify = $.isNode() ? require('./sendNotify') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 0;
+const randomCount = $.isNode() ? 0 : 0;
 let tuanActiveId = `6S9y4sJUfA2vPQP6TLdVIQ==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '';

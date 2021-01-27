@@ -2,12 +2,12 @@
  * @Author: ZXG https://github.com/xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-26 11:05:14
+ * @Last Modified time: 2021-01-27 12:45:49
  * 
  * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
  * 可互助，助力码每日不变，只变日期
  * 结束时间 未知
- * 最后更新时间 2021年1月26日 11:02:47
+ * 最后更新时间 2021年1月27日 11:10:56
  */
 
 const $ = new Env('签到领现金');
@@ -18,7 +18,7 @@ let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭�
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let helpAuthor = false;
-const randomCount = $.isNode() ? 20 : 0;
+const randomCount = $.isNode() ? 0 : 0;
 const inviteCodes = [
   // xin eU9YaezhZq8j9mbXz3RF1g
   // 宝 eU9YaOzgYPR082eHmXoa0Q
