@@ -1,0 +1,28 @@
+{
+  "name": "Xin",
+  "version": "1.0.0",
+  "description": "For myself",
+  "main": "ShareCode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xinx1201/jd_script.git"
+  },
+  "keywords": [
+    "JD"
+  ],
+  "author": "Xin",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "download": "^8.0.0",
+    "got": "^11.5.1",
+    "http-server": "^0.12.3",
+    "qrcode-terminal": "^0.12.0",
+    "request": "^2.88.2",
+    "tough-cookie": "^4.0.0",
+    "tunnel": "0.0.6"
+  }
+}
