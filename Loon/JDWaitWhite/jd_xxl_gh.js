@@ -1,16 +1,17 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-20 08:49:19 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:53:41
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:29
  * 
+ * ☆自用助力版☆
+ * 原作者:shylocks
  * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_xxl_gh.js
- * 最后更新时间 2021年1月25日 08:53:40
  */
 
 const $ = new Env('个护爱消除');
-const notify = $.isNode() ? require('./sendNotify.js') : '';
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 let exchangeName = $.isNode() ? (process.env.EXCHANGE_EC ? process.env.EXCHANGE_EC : '京豆*1888') : ($.getdata('JDEC') ? $.getdata('JDEC') : '京豆*1888')
 
 let ACT_ID = 'A_112790_R_3_D_20201102'

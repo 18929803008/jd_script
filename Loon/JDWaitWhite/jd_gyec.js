@@ -1,17 +1,18 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-18 16:20:23 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-25 08:42:53
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:31
  * 
+ * ☆自用助力版☆
+ * 原作者:shylocks
  * 原作者地址 https://raw.githubusercontent.com/shylocks/Loon/main/jd_gyec.js
- * 更新时间 2021年1月25日 08:42:52
  */
 
 
 const $ = new Env('工业品爱消除');
-const notify = $.isNode() ? require('./sendNotify') : '';
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 
 // xin 1804768
 // 宝 2776603

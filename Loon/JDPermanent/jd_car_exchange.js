@@ -1,8 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-27 13:34:48 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 13:35:45
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:04
+ * 
+ * ☆自用☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
  */
 
 
@@ -36,6 +40,7 @@ const JD_API_HOST = 'https://car-member.jd.com/api/';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
+  // 循环2次进行兑换
   for (let j = 0; j < 2; ++j)
     for (let i = 0; i < cookiesArr.length; i++) {
       if (cookiesArr[i]) {

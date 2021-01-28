@@ -1,11 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 19:10:44 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 12:56:31
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:58:35
  * 
- * 原作者地址：https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_sgmh.js
- * 最后更新时间 2021年1月27日 12:56:34
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_sgmh.js
  */
 
 const $ = new Env('闪购盲盒');

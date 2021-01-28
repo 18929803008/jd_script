@@ -1,12 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-22 10:33:44 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 11:21:43
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:55:56
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian_ar.js
- * 活动时间:2021-1-18至2021-2-11
- * 最后更新时间 2021年1月27日 11:21:42
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_nian_ar.js
  */
 
 const $ = new Env('京东炸年兽AR');

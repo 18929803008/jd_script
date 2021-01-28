@@ -1,11 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 11:30:36 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 12:51:15
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:27:04
+ * 
+ * ☆自用助力版☆
+ * 原作者:shylocks
  * 原作者地址：https://raw.githubusercontent.com/shylocks/Loon/main/jd_festival.js
- * 活动时间：2021年1月26日～2021年2月8日
- * 最后更新时间 2021年1月27日 11:13:21
  */
 
 const $ = new Env('京东手机年终奖');

@@ -1,11 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-18 09:50:56 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 12:47:26
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 17:01:12
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js
- * 更新时间 2021年1月27日 12:47:32
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_nian.js
  */
 
 
@@ -44,10 +45,10 @@ const inviteCodes = [
   `cgxZdTXtIbqJ6l3MDw2r66Q2z8_fRn6MskGPsA-p8eOZCB_PaYVnd1zo5VE@cgxZdTXtILqI7AabCgz7vSJB3rsfVixh9V0GkaQYbvKHFGxoKCfF9yG_ySo@cgxZdTXtIuiM7ViYCwSuvrXLuOJjIl9s0ZUiMjQ-rE9NetLAAxCYHAnoqiA@cgxZdTXtYvqpvES4flfsl7I4FGuew3E6Up4wkC17XP7U5eavwrPjemQ`,
 ];
 const pkInviteCodes = [
-  // xin IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs
-  // 宝 IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2
-  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2`,
-  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBrs@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk2`,
+  // xin IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBri
+  // 宝 IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk4
+  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBri@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk4`,
+  `IgNWdiLGaPaAvmHMCFapvMY9fA7sT8AkrioiHNU_AYZkfdaJnCHWPXk-cBa3fBri@IgNWdiLGaPaAvmHNCFev5wB-P91kyzXPWPTx8jn0bP58su7bg-bSDwmpZaWiCdk4`,
 ]
 !(async () => {
   await requireConfig();
@@ -115,7 +116,7 @@ async function jdNian() {
     await $.wait(1000)
     await doTask()
     await $.wait(2000)
-    // await helpFriends()
+    await helpFriends()
     await $.wait(2000)
     await getHomeData(true)
     await showMsg()

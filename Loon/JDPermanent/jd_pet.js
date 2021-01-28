@@ -1,11 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 14:48:00 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-23 09:12:48
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:14
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_pet.js
- * 最后更新时间 2021年1月21日 00:13:07
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_pet.js
  */
 
 const $ = new Env('东东萌宠');

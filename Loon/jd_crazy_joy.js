@@ -1,12 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 15:22:19 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 11:23:43
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:49:50
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_crazy_joy.js
- * 结束时间 未知
- * 最后更新时间 2021年1月27日 11:11:42
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_crazy_joy.js
  */
 
 

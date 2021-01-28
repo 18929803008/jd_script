@@ -1,8 +1,8 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 21:09:52 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 13:17:12
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:34
  */
 
 const $ = new Env("万年历极速版")
@@ -23,6 +23,7 @@ function AutoRead(){
    const myRequest = {
     url: `http://coin.makingmoney.cn:8088/task/award?guid=037A2282-CC50-4F82-9310-17BACDAB885B&task_id=6029&adtask_id=74&ver=1.1.1&systemver=14.2&bid=com.calendar.jishi.app&mt=1&sw=375&sh=667&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=055bb7e865aa346bda1a2860a32e0eb8`,
     headers: {
+      // Cookie抓包获取
       'Cookie' : ``,
       'Accept-Encoding' : `gzip, deflate`,
       'Connection' : `close`,

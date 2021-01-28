@@ -1,13 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-22 14:13:41 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-22 14:18:56
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:38
  * 
+ * 原作者:chavyleung
  * 原作者地址:https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.js
- * 最后更新时间 2021年1月22日 14:14:02
- * 
- * **删除网页端签到 只留下app端签到**
+ * 修改仅支持APP签到版
  */
 
 const $ = new Env('字幕组')

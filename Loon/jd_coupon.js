@@ -1,11 +1,11 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-28 12:27:42 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-28 12:28:06
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:49:06
  * 
+ * 原作者:shylocks
  * 原作者地址:https://raw.githubusercontent.com/shylocks/Loon/main/jd_coupon.js
- * 最后更新时间 2021年1月28日 12:28:00
  */
 
 const $ = new Env('源头好物红包');

@@ -1,13 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 15:25:28 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-27 12:45:49
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:48:54
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_cash.js
- * 可互助，助力码每日不变，只变日期
- * 结束时间 未知
- * 最后更新时间 2021年1月27日 11:10:56
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_cash.js
  */
 
 const $ = new Env('签到领现金');

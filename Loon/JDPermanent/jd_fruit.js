@@ -1,11 +1,12 @@
 /*
- * @Author: ZXG https://github.com/xin-code 
+ * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 14:42:09 
- * @Last Modified by: ZXG
- * @Last Modified time: 2021-01-23 09:06:20
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-01-28 16:47:11
  * 
- * 原作者地址:https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_fruit.js
- * 最后更新时间 2021年1月23日 09:05:50
+ * ☆自用助力版☆
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_fruit.js
  */
 
 const $ = new Env('东东农场');
