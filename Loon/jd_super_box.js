@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-28 12:04:27 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 17:00:45
+ * @Last Modified time: 2021-01-28 17:23:44
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -21,10 +21,10 @@ const randomCount = $.isNode() ? 0 : 0;
 const inviteCodes = [
   // xin ue27Dq1jV2xKwiwMWGYFG5ARYQPoe70sSYbi7keQaXE
   // 宝 fJuMQWKJULh27JA9MAcuuLtNC2OAqN1GPgpr9m_2Ss0
-  // ksy 
-  // ksyd 
-    `ue27Dq1jV2xKwiwMWGYFG5ARYQPoe70sSYbi7keQaXE@fJuMQWKJULh27JA9MAcuuLtNC2OAqN1GPgpr9m_2Ss0`,
-    `ue27Dq1jV2xKwiwMWGYFG5ARYQPoe70sSYbi7keQaXE@fJuMQWKJULh27JA9MAcuuLtNC2OAqN1GPgpr9m_2Ss0`,
+  // ksy 6hUFBbkcWIj0dU5i9ley8oaE1im71OlTxAp_mQkwqOE
+  // ksyd 5VpQKzOP8phbBhqF8FtEUw
+    `ue27Dq1jV2xKwiwMWGYFG5ARYQPoe70sSYbi7keQaXE@fJuMQWKJULh27JA9MAcuuLtNC2OAqN1GPgpr9m_2Ss0@6hUFBbkcWIj0dU5i9ley8oaE1im71OlTxAp_mQkwqOE@5VpQKzOP8phbBhqF8FtEUw`,
+    `ue27Dq1jV2xKwiwMWGYFG5ARYQPoe70sSYbi7keQaXE@fJuMQWKJULh27JA9MAcuuLtNC2OAqN1GPgpr9m_2Ss0@6hUFBbkcWIj0dU5i9ley8oaE1im71OlTxAp_mQkwqOE@5VpQKzOP8phbBhqF8FtEUw`,
 ];
 
 if ($.isNode()) {
