@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:53:37
+ * @Last Modified time: 2021-01-29 16:15:48
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -33,6 +33,7 @@ if ($.isNode()) {
   cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
+const randomCount = $.isNode() ? 0 : 0;
 
 // xin 43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg
 // 宝 43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg
