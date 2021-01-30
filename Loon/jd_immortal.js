@@ -2,20 +2,22 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-29 16:15:48
+ * @Last Modified time: 2021-01-30 10:49:46
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
- * 原作者脚本地址：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_immortal.js
+ * 原作者脚本地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_immortal.js
+ * 活动时间:2021-1-20至2021-2-5
  */
 
 const $ = new Env('京东神仙书院');
-
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
+const randomCount = $.isNode() ? 20 : 5;
 let scoreToBeans = $.isNode()?(process.env.JD_IMMORTAL_SCORE || 700):$.getdata('scoreToBeans') || 700; //兑换多少数量的京豆（20或者1000），0表示不兑换，默认兑换20京豆，如需兑换把0改成20或者1000，或者'商品名称'(商品名称放到单引号内)即可
+
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -33,7 +35,6 @@ if ($.isNode()) {
   cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const randomCount = $.isNode() ? 20 : 5;
 
 // xin 43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg
 // 宝 43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg
@@ -224,7 +225,7 @@ function getExchangeInfo() {
           if (data && data['retCode'] === "200") {
             const {userRemainScore, exchageRate} = data.result
             console.log(`当前用户兑换比率${exchageRate}`)
-            if (exchageRate === 1.4 && userRemainScore >= scoreToBeans) {
+            if (userRemainScore >= scoreToBeans) {
               console.log(`已达到最大比率，去兑换`)
               await exchange()
             }
@@ -255,6 +256,8 @@ function exchange() {
           if (data && data['retCode'] === "200") {
             const {consumedUserScore, receivedJbeanNum} = data.result
             console.log(`兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`)
+            $.msg($.name, ``, `京东账号${$.index} ${$.nickName}\n兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`);
+            if ($.isNode()) await notify.sendNotify(`${$.name} - ${$.index} - ${$.nickName}`, `兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`);
           } else {
             $.risk = true
             console.log(`账号被风控，无法参与活动`)

@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-27 08:40:21 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:46:50
+ * @Last Modified time: 2021-01-30 10:55:19
  */
 
 const querystring = require("querystring");
@@ -202,6 +202,12 @@ function CoolPush(text, desp) {
         }
       }
 
+      // 已知敏感词
+      text = text.replace(/京豆/g, "豆豆");
+      desp = desp.replace(/京豆/g, "");
+      desp = desp.replace(/🐶/g, "");
+      desp = desp.replace(/红包/g, "H包");
+
       switch (QQ_MODE) {
         case "email":
           options.json = {
@@ -241,8 +247,10 @@ function CoolPush(text, desp) {
               console.log(`酷推发送${pushMode(QQ_MODE)}通知消息成功\n`)
             } else if (data.code === 400) {
               console.log(`QQ酷推(Cool Push)发送${pushMode(QQ_MODE)}推送失败：${data.msg}\n`)
+            } else if (data.code === 503) {
+              console.log(`QQ酷推出错，${data.message}：${data.data}\n`)
             }else{
-              console.log(`酷推推送异常: ${data.msg}`);
+              console.log(`酷推推送异常: ${JSON.stringify(data)}`);
             }
           }
         } catch (e) {

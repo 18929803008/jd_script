@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 21:09:52 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:47:34
+ * @Last Modified time: 2021-01-30 10:39:51
  */
 
 const $ = new Env("万年历极速版")
@@ -21,6 +21,7 @@ const $ = new Env("万年历极速版")
 function AutoRead(){
  return new Promise((resolve) => { 
    const myRequest = {
+     // 获得奖励URL
     url: `http://coin.makingmoney.cn:8088/task/award?guid=037A2282-CC50-4F82-9310-17BACDAB885B&task_id=6029&adtask_id=74&ver=1.1.1&systemver=14.2&bid=com.calendar.jishi.app&mt=1&sw=375&sh=667&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=055bb7e865aa346bda1a2860a32e0eb8`,
     headers: {
       // Cookie抓包获取
@@ -30,15 +31,16 @@ function AutoRead(){
       'Accept' : `*/*`,
       'Host' : `coin.makingmoney.cn:8088`,
       'User-Agent' : `%E4%B8%87%E5%B9%B4%E5%8E%86%E6%9E%81%E9%80%9F%E7%89%88/1 CFNetwork/1206 Darwin/20.1.0`,
-      'Accept-Language' : `zh-cn`},
+      'Accept-Language' : `zh-cn`
+    },
 };
-
+  // get请求 请求地址&请求头 (错误，错误响应数据,成功返回的JSON数据)
   $.get(myRequest, (error, response, data) => {
     if(data){
-      console.log(data);
+      console.log("相应数据成功:"+data);
     }
      if(error){
-     console.log("响应数据失败："+response + "\n\n" + data);
+     console.log("响应失败："+response + "\n\n" + data);
      }
       })
     resolve()

@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 14:42:09 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 09:00:56
+ * @Last Modified time: 2021-01-30 09:10:42
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -1241,7 +1241,7 @@ function readShareCode() {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
           if (data) {
-            console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
+            console.log(`随机取${randomCount}个码放到您固定的互助码后面(不影响已有固定互助)`)
             data = JSON.parse(data);
           }
         }
@@ -1326,7 +1326,7 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
-        console.log('✅已经把脚本内置码1推送到Boxjs后面');
+        console.log('✅已经把脚本内置码1添加到Boxjs助力码后面');
         temp.push(shareCodes[0])
         jdFruitShareArr.push(temp.join('@'));
       }
@@ -1337,7 +1337,7 @@ function requireConfig() {
             temp.push($.getdata(item))
           }
         }
-        console.log('✅已经把脚本内置码2推送到Boxjs后面');
+        console.log('✅已经把脚本内置码2添加到Boxjs助力码后面');
         temp.push(shareCodes[1])
         jdFruitShareArr.push(temp.join('@'));
       }

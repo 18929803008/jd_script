@@ -2,11 +2,12 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 11:30:36 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:27:04
+ * @Last Modified time: 2021-01-30 10:48:26
  * 
  * ☆自用助力版☆
- * 原作者:shylocks
- * 原作者地址：https://raw.githubusercontent.com/shylocks/Loon/main/jd_festival.js
+ * 原作者:lxk0301
+ * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_festival.js
+ * 活动时间:2021年1月26日～2021年2月8日
  */
 
 const $ = new Env('京东手机年终奖');
@@ -478,7 +479,6 @@ function getTs() {
 function taskPostUrl(function_id, body = {}) {
   const t = getTs()
   let n = {
-    t: t,
     ...body
   }
   let str = ''

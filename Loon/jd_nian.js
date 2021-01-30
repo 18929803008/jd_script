@@ -2,11 +2,12 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 17:01:12
+ * @Last Modified time: 2021-01-30 10:52:59
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_nian.js
+ * 活动时间:2021-1-18至2021-2-11
  */
 
 

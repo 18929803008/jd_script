@@ -2,12 +2,12 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 08:34:45 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 08:37:50
+ * @Last Modified time: 2021-01-30 10:49:51
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_5g.js
- * 活动时间: 2021-1-30至2021-2-4
+ * 活动时间:2021-1-30至2021-2-4
  */
 
 const $ = new Env('5G狂欢城');

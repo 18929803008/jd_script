@@ -2,11 +2,12 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-22 10:33:44 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:55:56
+ * @Last Modified time: 2021-01-30 10:52:10
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_nian_ar.js
+ * 活动时间:2021-1-18至2021-2-11
  */
 
 const $ = new Env('京东炸年兽AR');
@@ -130,7 +131,7 @@ function getHomeData(info=false) {
               $.secretp = null
               return
             }
-            console.log(`当前爆竹${$.userInfo.raiseInfo.remainScore}🧨，下一关需要${$.userInfo.raiseInfo.nextLevelScore}🧨`)
+            console.log(`当前爆竹${$.userInfo.raiseInfo.remainScore}🧨，下一关需要${$.userInfo.raiseInfo.nextLevelScore - $.userInfo.raiseInfo.curLevelStartScore}🧨`)
 
             if(info) {
               message += `当前爆竹${$.userInfo.raiseInfo.remainScore}🧨\n`
