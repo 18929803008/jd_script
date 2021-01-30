@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 08:34:45 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:49:51
+ * @Last Modified time: 2021-01-30 10:59:08
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -84,7 +84,13 @@ async function jdFive() {
   try {
     $.beans = 0
     $.score = 0
+    $.risk = false
     await getToday()
+    if($.risk){
+      message += '活动太火爆了，快去买买买吧\n'
+      await showMsg()
+      return
+    }
     await getHelp()
     console.log(`去浏览会场`)
     await getMeetingList()
@@ -163,7 +169,10 @@ function getToday() {
           if (data && data['code'] === 200) {
             console.log(data.data.rsMsg)
           } else {
-            console.log(data)
+            console.log(data.msg)
+            if(data.code===1002){
+              $.risk = true
+            }
           }
         }
       } catch (e) {
