@@ -16,7 +16,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
-const randomCount = $.isNode() ? 0 : 0;
+const randomCount = $.isNode() ? 20 : 5;
 
 const inviteCodes = [
   // xin e59fb499-151e-42a9-9825-6374a04ad3cd

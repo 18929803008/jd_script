@@ -33,7 +33,7 @@ if ($.isNode()) {
   cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const randomCount = $.isNode() ? 0 : 0;
+const randomCount = $.isNode() ? 20 : 5;
 
 // xin 43xIs4YwE5Z7DsWOzDSBaVTEIGN-WPy5l8qcO0rxDbElTQcZB9w0QAj21dFGS2GtnHPg
 // 宝 43xIs4YwE5Z7DsWOzDSFaVUEUMh2CdNA4gcq96KV0tE6mYcZB9wkQBiTaNpLbWWawzqg

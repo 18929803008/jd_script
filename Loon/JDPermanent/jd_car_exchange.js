@@ -2,9 +2,10 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-27 13:34:48 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-28 16:47:04
+ * @Last Modified time: 2021-01-30 09:00:48
  * 
  * ☆自用☆
+ * ☆汽车兑换循环2次版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
  */
@@ -16,7 +17,7 @@ const notify = $.isNode() ? require('../sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 0 : 0;
+const randomCount = $.isNode() ? 20 : 5;
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
