@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 10:29:32 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 10:40:05
+ * @Last Modified time: 2021-02-01 12:57:50
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -39,10 +39,10 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
   // xin oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4
   // 宝 oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl
-  // ksy 
-  // ksyd
-  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4`,
-  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4`,
+  // ksy oMZeXbQep90GAOM2Zrciq6fW5-HdEaIMq2oXup0H7H8dlx7H
+  // ksyd oMZeHaY79sEmdbB0T9kTs5vi_pj_2XpPAzAWeWCLQNaUGME
+  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4@oMZeXbQep90GAOM2Zrciq6fW5-HdEaIMq2oXup0H7H8dlx7H@oMZeHaY79sEmdbB0T9kTs5vi_pj_2XpPAzAWeWCLQNaUGME`,
+  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4@oMZeXbQep90GAOM2Zrciq6fW5-HdEaIMq2oXup0H7H8dlx7H@oMZeHaY79sEmdbB0T9kTs5vi_pj_2XpPAzAWeWCLQNaUGME`,
 ];
 !(async () => {
   await requireConfig();

@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 08:34:45 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 10:11:03
+ * @Last Modified time: 2021-02-01 12:56:48
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -38,10 +38,10 @@ const JD_API_HOST = 'https://rdcseason.m.jd.com/api/';
 const inviteCodes = [
   // xin fe08f39e-af2b-4b02-9152-e0edf98cebe4
   // 宝 56d5105a-fa0a-415b-98ab-5ff25259e1c1
-  // ksy 
-  // ksyd 
-  '',
-  ''
+  // ksy 2fb2b410-dd3f-4087-ba71-8304c09ae330 
+  // ksyd 830c6cfc-1ff6-4f7d-b4a4-3cec3a1bcf46
+  'fe08f39e-af2b-4b02-9152-e0edf98cebe4@56d5105a-fa0a-415b-98ab-5ff25259e1c1@2fb2b410-dd3f-4087-ba71-8304c09ae330@830c6cfc-1ff6-4f7d-b4a4-3cec3a1bcf46',
+  'fe08f39e-af2b-4b02-9152-e0edf98cebe4@56d5105a-fa0a-415b-98ab-5ff25259e1c1@2fb2b410-dd3f-4087-ba71-8304c09ae330@830c6cfc-1ff6-4f7d-b4a4-3cec3a1bcf46',
 ];
 !(async () => {
   await requireConfig();
