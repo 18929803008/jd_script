@@ -2,10 +2,9 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-27 13:34:48 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:38:50
+ * @Last Modified time: 2021-02-01 15:45:35
  * 
- * ☆自用☆
- * ☆汽车兑换循环2次版☆
+ * ☆自用抢兑换京豆版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
  */
@@ -13,11 +12,14 @@
 
 const $ = new Env('京东汽车兑换');
 
-const notify = $.isNode() ? require('../sendNotify') : '';
+const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 5;
+
+// 兑换成功消息通知
+showCarExchangeSuccessArr=[];
+
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -41,8 +43,13 @@ const JD_API_HOST = 'https://car-member.jd.com/api/';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  // 循环2次进行兑换
-  for (let j = 0; j < 2; ++j)
+  
+  // 循环200次
+  // 建议23:59:45开始运行
+  for (let j = 0; j < 200; ++j){
+    console.log('-------------------------------');
+    console.log('开始第【'+j+'】次尝试兑换京豆');
+    console.log('-------------------------------');
     for (let i = 0; i < cookiesArr.length; i++) {
       if (cookiesArr[i]) {
         cookie = cookiesArr[i];
@@ -53,8 +60,10 @@ const JD_API_HOST = 'https://car-member.jd.com/api/';
         $.nickName = '';
         message = '';
         await jdCar();
+        await showCarExchangeSuccess();
       }
     }
+  }
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -84,6 +93,9 @@ function exchange() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             console.log(`兑换结果：${JSON.stringify(data)}`)
+            if(data.data.num!==null){
+              showCarExchangeSuccessArr.push(`【${$.UserName}】成功兑换京豆`);
+            }
           }
         }
       } catch (e) {
@@ -93,6 +105,15 @@ function exchange() {
       }
     })
   })
+}
+
+function showCarExchangeSuccess(){
+  if(showCarExchangeSuccessArr.length!==0){
+    console.log(`----------🎁兑换结果🎁----------`);
+    showCarExchangeSuccessArr.forEach(item=>{
+      console.log(`🎉`+item);
+    })
+  }
 }
 
 function taskUrl(function_id, body = {}) {
@@ -109,7 +130,7 @@ function taskUrl(function_id, body = {}) {
       'origin': 'https://h5.m.jd.com',
       "Referer": "https://h5.m.jd.com/babelDiy/Zeus/44bjzCpzH9GpspWeBzYSqBA7jEtP/index.html",
       "Cookie": cookie,
-      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0"),
+      "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0"),
     }
   }
 }
@@ -127,7 +148,7 @@ function TotalBean() {
         "Connection": "keep-alive",
         "Cookie": cookie,
         "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
-        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('../USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
+        "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")
       }
     }
     $.post(options, (err, resp, data) => {

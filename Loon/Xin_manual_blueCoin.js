@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 23:43:11 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 10:08:51
+ * @Last Modified time: 2021-02-01 15:45:55
  * 
  * ☆自用兑换酸奶版☆
  * 原作者:lxk0301
@@ -46,9 +46,9 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
   }
   // 循环100次
   // 建议23:59:45开始运行
-  for(let n = 0;n<100;n++){
+  for(let j = 0;j<100;j++){
     console.log('-------------------------------');
-    console.log('开始第【'+n+'】次尝试兑换纯甄酸牛奶');
+    console.log('开始第【'+j+'】次尝试兑换纯甄酸牛奶');
     console.log('-------------------------------');
   for (let i =0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -378,10 +378,13 @@ function msgShow() {
 
 // 显示兑换成功的奖品数量
 function exchangeGoodsSuccess(){
-  console.log(`🎁已经成功兑换奖品的次数为:`+exchangeGoodsSuccessNum+`次🎁`);
+  if(exchangeGoodsSuccessNum!==0){
+  console.log(`----------🎁兑换结果🎁----------`);
+  console.log(`🎉已经成功兑换奖品的次数为:`+exchangeGoodsSuccessNum+`次`);
   exchangeGoodsSuccessArr.forEach(item=>{
-    console.log(item);
+    console.log(`🎉`+item);
   })
+  }
 }
 
 function TotalBean() {
