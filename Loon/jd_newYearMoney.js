@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 10:29:32 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 10:32:45
+ * @Last Modified time: 2021-02-01 10:40:05
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -17,7 +17,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 0 : 0;
+const randomCount = $.isNode() ? 20 : 5;
 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
@@ -41,8 +41,8 @@ const inviteCodes = [
   // 宝 oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl
   // ksy 
   // ksyd
-  ``,
-  ``,
+  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4`,
+  `oMZeX-YapoMFAetjZbl5-N8c2tW1Vgo1s1-46xofjbcX1mPl@oMZeXuYboNhSBOozM7cm_80A6QgiFptNktdWcS3QGc7v6wa4`,
 ];
 !(async () => {
   await requireConfig();
