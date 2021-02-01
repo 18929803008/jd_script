@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-20 14:52:57 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:49:46
+ * @Last Modified time: 2021-02-01 10:19:12
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -258,6 +258,9 @@ function exchange() {
             console.log(`兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`)
             $.msg($.name, ``, `京东账号${$.index} ${$.nickName}\n兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`);
             if ($.isNode()) await notify.sendNotify(`${$.name} - ${$.index} - ${$.nickName}`, `兑换成功，消耗${consumedUserScore}积分，获得${receivedJbeanNum}京豆`);
+          } else if (data['retCode'] === "323") {
+            console.log(`还木有到兑换时间哦~ `)
+            message += `还木有到兑换时间哦~ \n`
           } else {
             $.risk = true
             console.log(`账号被风控，无法参与活动`)

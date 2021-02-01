@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-18 09:50:56 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:52:59
+ * @Last Modified time: 2021-02-01 10:22:23
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -722,6 +722,20 @@ function shopLotteryInfo(shopSign) {
                         console.log(`${vo.taskName}已做完`)
                       }
                     }
+                  }else if (vo.taskType === 21) {
+                    if (vo.brandMemberVos) {
+                      if (vo.status === 1) {
+                        console.log(`准备做此任务：${vo.taskName}`)
+                        for (let task of vo.brandMemberVos) {
+                          if (task.status === 1) {
+                            await $.wait(2000)
+                            await collectScore(vo.taskId, task.advertId, null, null, shopSign);
+                          }
+                        }
+                      } else if (vo.status === 2) {
+                        console.log(`${vo.taskName}已做完`)
+                      }
+                    }
                   }
                 }
               }
@@ -759,6 +773,8 @@ function doShopLottery(shopSign) {
                 console.log(`抽奖成功，获得${result.score}爆竹🧨`)
               else if (result.awardType === 2 || result.awardType === 3)
                 console.log(`抽奖成功，获得优惠卷`)
+              else if (result.awardType === 5)
+                console.log(`抽奖成功，品牌卡`)
               else
                 console.log(`抽奖成功，获得${JSON.stringify(result)}`)
             } else {
@@ -787,8 +803,9 @@ function pkInfo() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if (data.code === 0 && data.data && data.data.bizCode === 0) {
-              console.log(`\n您的好友PK助力码为${data.data.result.groupInfo.groupAssistInviteId}\n`)
+              console.log(`\n您的好友PK助力码为${data.data.result.groupInfo.groupAssistInviteId}\n注：此pk邀请码每天都变！`)
               let info = data.data.result.groupPkInfo
+              console.log(`预计分得:${data.data.result.groupInfo.personalAward}红包`)
               if (info.dayAward)
                 console.log(`白天关卡：${info.dayAward}元红包，完成进度 ${info.dayTotalValue}/${info.dayTargetSell}`)
               else {

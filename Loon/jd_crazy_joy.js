@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-16 15:22:19 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:44:28
+ * @Last Modified time: 2021-02-01 10:15:42
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -28,7 +28,7 @@ const inviteCodes = [
   '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
 ];
 
-const randomCount = $.isNode() ? 20 : 5;
+const randomCount = $.isNode() ? 10 : 5;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {

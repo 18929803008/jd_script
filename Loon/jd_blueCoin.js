@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 23:43:11 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 23:48:33
+ * @Last Modified time: 2021-02-01 10:08:51
  * 
  * ☆自用兑换酸奶版☆
  * 原作者:lxk0301
@@ -15,6 +15,12 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let coinToBeans = $.getdata('coinToBeans') || '纯甄酸牛奶'; //兑换多少数量的京豆（20或者1000），0表示不兑换，默认兑换20京豆，如需兑换把0改成20或者1000，或者'商品名称'(商品名称放到单引号内)即可
 let jdNotify = false;//是否开启静默运行，默认false关闭(即:奖品兑换成功后会发出通知提示)
+
+// 已经成功兑换奖品次数中
+var exchangeGoodsSuccessNum = 0;
+// 查看哪个账号已经成功兑换奖品
+var exchangeGoodsSuccessArr = [];
+
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 if ($.isNode()) {
@@ -38,7 +44,9 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
     $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  for(var n = 0;n<100;n++){
+  // 循环100次
+  // 建议23:59:45开始运行
+  for(let n = 0;n<100;n++){
     console.log('-------------------------------');
     console.log('开始第【'+n+'】次尝试兑换纯甄酸牛奶');
     console.log('-------------------------------');
@@ -81,6 +89,7 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
         console.log('查询到您设置的是不兑换京豆选项，现在为您跳过兑换京豆。如需兑换，请去BoxJs设置或者修改脚本coinToBeans\n')
       }
       await msgShow();
+      await exchangeGoodsSuccess();
     }
   }
 }
@@ -273,6 +282,10 @@ function smtg_obtainPrize(prizeId, timeout = 0) {
       $.post(url, async (err, resp, data) => {
         try {
           console.log(`兑换结果:${data}`);
+
+          // 把兑换成功的结果次数推送到【已经成功兑换奖品次数中】
+          exchangeGoodsSuccessNum++
+          
           if (safeGet(data)) {
             data = JSON.parse(data);
             $.data = data;
@@ -285,6 +298,10 @@ function smtg_obtainPrize(prizeId, timeout = 0) {
               if (`${coinToBeans}` === '1000') {
                 $.beanscount ++;
                 console.log(`【京东账号${$.index}】${$.nickName} 第${$.data.data.result.exchangeNum}次换${$.title}成功`)
+                
+                // 把兑换成功的结果推送到【已经成功兑换奖品Arr中】
+                exchangeGoodsSuccessArr.push(`【京东账号${$.index}】${$.nickName} 第${$.data.data.result.exchangeNum}次换${$.title}成功`)
+
                 if ($.beanscount === 1) return;
               } else if (`${coinToBeans}` === '20') {
                 $.beanscount ++;
@@ -358,6 +375,15 @@ function msgShow() {
     resolve()
   })
 }
+
+// 显示兑换成功的奖品数量
+function exchangeGoodsSuccess(){
+  console.log(`🎁已经成功兑换奖品的次数为:`+exchangeGoodsSuccessNum+`次🎁`);
+  exchangeGoodsSuccessArr.forEach(item=>{
+    console.log(item);
+  })
+}
+
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
