@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 09:18:10 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 09:26:43
+ * @Last Modified time: 2021-02-02 17:30:17
  * 
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_818.js
@@ -67,7 +67,7 @@ let helpCode = []
       // await main();
     }
   }
-  // console.log($.temp)
+  // console.log(JSON.stringify($.temp))
 })()
     .catch((e) => {
       $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -568,7 +568,6 @@ async function doHelp() {
   }
   // await updateShareCodes();
   // if (!$.updatePkActivityIdRes) await updateShareCodesCDN();
-  await updateShareCodesCDN();
   if ($.updatePkActivityIdRes && $.updatePkActivityIdRes['shareCodes']) tempCode = $.updatePkActivityIdRes['shareCodes'];
   console.log(`是否大于当天九点🕘:${nowTime > new Date(nowTime).setHours(9, 0, 0, 0)}`)
   //当天大于9:00才从API里面取收集的助力码
@@ -818,44 +817,7 @@ function getListRank() {
     })
   })
 }
-function updateShareCodes(url = 'https://raw.githubusercontent.com/LXK9301/updateTeam/master/jd_shareCodes.json') {
-  return new Promise(resolve => {
-    //https://cdn.jsdelivr.net/gh/LXK9301/updateTeam@master/jd_shareCodes.json
-    //https://raw.githubusercontent.com/LXK9301/updateTeam/master/jd_shareCodes.json
-    $.get({url}, async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-        } else {
-          $.updatePkActivityIdRes = JSON.parse(data);
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-function updateShareCodesCDN(url = 'https://gitee.com/lxk0301/updateTeam/raw/master/jd_shareCodes.json') {
-  return new Promise(resolve => {
-    //https://cdn.jsdelivr.net/gh/LXK9301/updateTeam@master/jd_shareCodes.json
-    $.get({url}, async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
-        } else {
-          $.updatePkActivityIdRes = JSON.parse(data);
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
+
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {

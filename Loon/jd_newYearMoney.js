@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 10:29:32 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 14:30:24
+ * @Last Modified time: 2021-02-02 17:30:51
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -145,7 +145,7 @@ async function helpFriends() {
     if (!code) continue
     await helpFriend(code)
     if (!$.canHelp) return
-    await $.wait(2000)
+    await $.wait(4000)
   }
 }
 

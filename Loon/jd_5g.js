@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 08:34:45 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 12:56:48
+ * @Last Modified time: 2021-02-02 17:19:24
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -16,7 +16,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 0 : 0;
+const randomCount = $.isNode() ? 20 : 5;
 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
@@ -619,7 +619,7 @@ function requireConfig() {
         }
       })
     }
-    let data = await updateShareCodes("https://gitee.com/")
+    let data = await updateShareCodes("https://gitee.com")
     if(data){
       inviteCodes[0] = data.join('@')
       inviteCodes[1] = data.join('@')
@@ -740,7 +740,7 @@ function jsonParse(str) {
     }
   }
 }
-function updateShareCodes(url = 'https://gitee.com/') {
+function updateShareCodes(url = 'https://gitee.com') {
   return new Promise(resolve => {
     $.get({url,
       headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.2.2;14.2;%E4%BA%AC%E4%B8%9C/9.2.2 CFNetwork/1206 Darwin/20.1.0")}
