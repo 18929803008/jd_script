@@ -2,9 +2,9 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-27 13:34:48 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 15:45:35
+ * @Last Modified time: 2021-02-03 14:09:44
  * 
- * ☆自用抢兑换京豆版☆
+ * ☆兑换京豆版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
  */

@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-26 11:30:36 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-02 17:24:09
+ * @Last Modified time: 2021-02-03 13:03:37
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -65,8 +65,6 @@ const JD_API_HOST = 'https://shopping-festival.m.jd.com/sf/';
 
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
-        } else {
-          $.setdata('', `CookieJD${i ? i + 1 : ""}`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
         continue
       }

@@ -2,12 +2,13 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 10:29:32 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-02 17:30:51
+ * @Last Modified time: 2021-02-03 08:39:15
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_newYearMoney.js
  * 活动时间:2021-2-1至2021-2-11
+ * 数据库每天八点多清库
  */
 
 
@@ -17,7 +18,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 20 : 5;
+const randomCount = $.isNode() ? 0 : 5;
 
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message, sendAccount = [], receiveAccount = [], receiveCardList = [];

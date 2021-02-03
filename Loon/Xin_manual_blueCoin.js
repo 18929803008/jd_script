@@ -2,9 +2,9 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-01-30 23:43:11 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-01 15:45:55
+ * @Last Modified time: 2021-02-03 12:29:22
  * 
- * ☆自用兑换酸奶版☆
+ * ☆自用兑换自定义商品☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_blueCoin.js
  */
@@ -13,7 +13,7 @@ const $ = new Env('东东超市兑换奖品');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let coinToBeans = $.getdata('coinToBeans') || '纯甄酸牛奶'; //兑换多少数量的京豆（20或者1000），0表示不兑换，默认兑换20京豆，如需兑换把0改成20或者1000，或者'商品名称'(商品名称放到单引号内)即可
+let coinToBeans = $.getdata('coinToBeans') || '三只松鼠'; //兑换多少数量的京豆（20或者1000），0表示不兑换，默认兑换20京豆，如需兑换把0改成20或者1000，或者'商品名称'(商品名称放到单引号内)即可
 let jdNotify = false;//是否开启静默运行，默认false关闭(即:奖品兑换成功后会发出通知提示)
 
 // 已经成功兑换奖品次数中
@@ -48,7 +48,7 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
   // 建议23:59:45开始运行
   for(let j = 0;j<100;j++){
     console.log('-------------------------------');
-    console.log('开始第【'+j+'】次尝试兑换纯甄酸牛奶');
+    console.log(`开始第【`+j+`】次尝试兑换自定义商品【`+coinToBeans+`】`);
     console.log('-------------------------------');
   for (let i =0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

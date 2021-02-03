@@ -2,7 +2,7 @@
  * @Author:  Xin https://github.com/Xinx1201
  * @Date: 2021-01-28 12:04:27 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-02 17:34:10
+ * @Last Modified time: 2021-02-03 14:09:22
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -66,8 +66,6 @@ const JD_API_HOST = 'https://api.m.jd.com/';
 
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
-        } else {
-          $.setdata('', `CookieJD${i ? i + 1 : ""}`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
         continue
       }
