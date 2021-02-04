@@ -2,14 +2,16 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-04 13:11:59 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-04 17:28:47
+ * @Last Modified time: 2021-02-04 23:33:24
  * 
  * 剑三通宝红包
  */
 
 const $ = new Env("剑三通宝红包")
 
+// Cookies
 const CookiesArr = [
+  ``
 ] 
 // 12：00 郭炜炜
 // jx3hb = '剑网3真好玩'
@@ -20,9 +22,9 @@ const CookiesArr = [
 // 16:00 同人秀
 // jx3hb = '嗨老婆'
 // 17:00 客户服务
-jx3hb = '小红手快出来'
+// jx3hb = '小红手快出来'
 // 19:00 咸鱼
-// jx3hb = '剑网3真好玩'
+jx3hb = '小年夜快乐'
 
 !(async () => {
   for(let j=0;j<CookiesArr.length;j++){
@@ -40,6 +42,7 @@ function GetHB(){
  return new Promise((resolve) => { 
    const myRequest = {
      // 获得奖励URL
+     // https://ws.xoyo.com/jx3/redpacket210108/receive_packet?channel=
     url: ``,
     headers: {
       // Cookie抓包获取
