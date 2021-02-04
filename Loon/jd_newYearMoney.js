@@ -2,13 +2,12 @@
  * @Author: Xin https://github.com/Xinx1201 
  * @Date: 2021-02-01 10:29:32 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-03 08:39:15
+ * @Last Modified time: 2021-02-04 09:29:01
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
  * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_newYearMoney.js
  * 活动时间:2021-2-1至2021-2-11
- * 数据库每天八点多清库
  */
 
 
@@ -316,7 +315,7 @@ function helpFriend(inviteId) {
           if (data && data.data['bizCode'] === 0) {
             console.log(data.data.result.msg)
           } else {
-            console.log(data.data.bizMsg)
+            console.log(`helpFriends ${data.data.bizMsg}`)
             if (data.data.bizCode === -523) {
               $.canHelp = false
             }
