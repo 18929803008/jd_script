@@ -1,8 +1,8 @@
 /*
- * @Author:  Xin https://github.com/Xinx1201
+ * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:28:42 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-03 10:57:49
+ * @Last Modified time: 2021-02-05 09:06:24
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -67,8 +67,6 @@ if ($.isNode()) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
-        } else {
-          $.setdata('', `CookieJD${i ? i + 1 : ""}`);//cookie失效，故清空cookie。$.setdata('', `CookieJD${i ? i + 1 : "" }`);//cookie失效，故清空cookie。
         }
         continue
       }

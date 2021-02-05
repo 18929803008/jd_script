@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-04 13:11:59 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-06 00:29:03
+ * @Last Modified time: 2021-02-06 00:32:01
  * 
  * 剑三通宝红包
  */
@@ -21,15 +21,15 @@ const CookiesArr = [
 // 16:00 同人秀
 // jx3hb = '嗨老婆'
 // 17:00 客户服务
-jx3hb = '小红手快出来'
+// jx3hb = '小红手快出来'
 // 19:00 咸鱼
-// jx3hb = '剑网3真好玩'
+jx3hb = '小年夜快乐'
 
 !(async () => {
   for(let j=0;j<CookiesArr.length;j++){
     nowCookie=CookiesArr[j]
     await GetHB()
-    await $.wait(200)
+    await $.wait(100)
   }
 })()
   .catch((e) => $.logErr(e))
