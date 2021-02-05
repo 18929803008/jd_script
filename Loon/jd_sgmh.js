@@ -1,8 +1,8 @@
 /*
- * @Author:  Xin https://github.com/Xinx1201
+ * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-26 19:10:44 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-03 14:08:58
+ * @Last Modified time: 2021-02-05 09:13:57
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -252,7 +252,8 @@ function interact_template_getLotteryResult(taskId,timeout = 0) {
 function showMsg() {
   message += `任务已完成，本次运行获得京豆${$.beans}`
   return new Promise(resolve => {
-    $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
+    if ($.beans) $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
+    $.log(`【京东账号${$.index}】${$.nickName}\n${message}`);
     resolve()
   })
 }
