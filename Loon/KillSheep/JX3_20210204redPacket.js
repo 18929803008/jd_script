@@ -1,17 +1,16 @@
 /*
- * @Author: Xin https://github.com/Xinx1201 
+ * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-04 13:11:59 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-04 23:33:24
+ * @Last Modified time: 2021-02-06 00:29:03
  * 
  * 剑三通宝红包
  */
 
 const $ = new Env("剑三通宝红包")
 
-// Cookies
 const CookiesArr = [
-  ``
+  ``,
 ] 
 // 12：00 郭炜炜
 // jx3hb = '剑网3真好玩'
@@ -22,9 +21,9 @@ const CookiesArr = [
 // 16:00 同人秀
 // jx3hb = '嗨老婆'
 // 17:00 客户服务
-// jx3hb = '小红手快出来'
+jx3hb = '小红手快出来'
 // 19:00 咸鱼
-jx3hb = '小年夜快乐'
+// jx3hb = '剑网3真好玩'
 
 !(async () => {
   for(let j=0;j<CookiesArr.length;j++){
@@ -42,8 +41,7 @@ function GetHB(){
  return new Promise((resolve) => { 
    const myRequest = {
      // 获得奖励URL
-     // https://ws.xoyo.com/jx3/redpacket210108/receive_packet?channel=
-    url: ``,
+    url: `https://ws.xoyo.com/jx3/redpacket210108/receive_packet?channel=%E6%B5%8F%E8%A7%88%E5%99%A8&from_source=2&role_name=%E4%B9%9D%E5%A8%84%E7%9A%84%E7%81%B5%E8%9B%87&server_name=%E7%A0%B4%E9%98%B5%E5%AD%90&uid=${jx3hb}&zone_id=z21&zone_name=%E5%8F%8C%E7%BA%BF%E4%B8%80%E5%8C%BA%EF%BC%88%E7%82%B9%E5%8D%A1%EF%BC%89&__ts__=1612423897292&callback=`,
     headers: {
       // Cookie抓包获取
       'Cookie' : `${nowCookie}`,
@@ -58,10 +56,10 @@ function GetHB(){
   // get请求 请求地址&请求头 (错误，错误响应数据,成功返回的JSON数据)
   $.get(myRequest, (error, response, data) => {
     if(data){
-      console.log("红包反馈数据:"+data);
+      console.log("通宝反馈数据:"+data);
       temp = JSON.parse(data)
       console.log(`----------🎁兑换结果🎁----------`);
-        console.log(`\n红包信息：`+temp.data.receive_money+`通宝`);
+        console.log(`\n获得：`+temp.data.receive_money+`通宝`);
       if(temp.status===`-20202`||`-20204`){
         console.log(temp.msg);
       }
