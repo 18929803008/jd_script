@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:28:42 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-05 09:06:24
+ * @Last Modified time: 2021-02-08 09:04:59
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -275,7 +275,7 @@ function getActContent(info = false, shareUuid = '') {
         if (err) {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
-          if (safeGet(data)) {
+          if (data && safeGet(data)) {
             data = JSON.parse(data);
             if (data.data) {
               $.userInfo = data.data
@@ -392,7 +392,7 @@ function draw() {
         if (err) {
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
-          if (safeGet(data)) {
+          if (data && safeGet(data)) {
             data = JSON.parse(data);
             if (data.result && data.data) {
               if (data.data.name) {

@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/xin-code 
  * @Date: 2021-01-30 23:43:11 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-06 00:31:10
+ * @Last Modified time: 2021-02-08 09:16:35
  * 
  * ☆自用兑换自定义商品☆
  * 原作者:lxk0301
@@ -50,52 +50,56 @@ const JD_API_HOST = `https://api.m.jd.com/api?appid=jdsupermarket`;
     console.log('-------------------------------');
     console.log(`开始第【`+j+`】次尝试兑换自定义商品【`+coinToBeans+`】`);
     console.log('-------------------------------');
-  for (let i =0; i < cookiesArr.length; i++) {
-    cookie = cookiesArr[i];
-    if (cookie) {
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
-      $.index = i + 1;
-      $.data = {};
-      $.coincount = 0;
-      $.beanscount = 0;
-      $.blueCost = 0;
-      $.coinerr = "";
-      $.beanerr = "";
-      $.title = '';
-      //console.log($.coincount);
-      $.isLogin = true;
-      $.nickName = '';
-      await TotalBean();
-      console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
-      console.log(`目前暂无兑换酒类的奖品功能，即使输入酒类名称，脚本也会提示下架\n`)
-      if (!$.isLogin) {
-        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
-
+    for (let i =0; i < cookiesArr.length; i++) {
+      cookie = cookiesArr[i];
+      if (cookie) {
+        $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
+        $.index = i + 1;
+        $.data = {};
+        $.coincount = 0;
+        $.beanscount = 0;
+        $.blueCost = 0;
+        $.coinerr = "";
+        $.beanerr = "";
+        $.title = '';
+        //console.log($.coincount);
+        $.isLogin = true;
+        $.nickName = '';
+        await TotalBean();
+        console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
+        console.log(`目前暂无兑换酒类的奖品功能，即使输入酒类名称，脚本也会提示下架\n`)
+        if (!$.isLogin) {
+          $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+  
+          if ($.isNode()) {
+            await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+          }
+          continue
+        }
+        //先兑换京豆
         if ($.isNode()) {
-          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+          if (process.env.MARKET_COIN_TO_BEANS) {
+            coinToBeans = process.env.MARKET_COIN_TO_BEANS;
+          }
         }
-        continue
-      }
-      //先兑换京豆
-      if ($.isNode()) {
-        if (process.env.MARKET_COIN_TO_BEANS) {
-          coinToBeans = process.env.MARKET_COIN_TO_BEANS;
+        try {
+          if (`${coinToBeans}` !== '0') {
+            await smtgHome();//查询蓝币数量，是否满足兑换的条件
+            await PrizeIndex();
+          } else {
+            console.log('查询到您设置的是不兑换京豆选项，现在为您跳过兑换京豆。如需兑换，请去BoxJs设置或者修改脚本coinToBeans\n')
+          }
+          await msgShow();
+        } catch (e) {
+          $.logErr(e)
         }
       }
-      if (`${coinToBeans}` !== '0') {
-        await smtgHome();//查询蓝币数量，是否满足兑换的条件
-        await PrizeIndex();
-      } else {
-        console.log('查询到您设置的是不兑换京豆选项，现在为您跳过兑换京豆。如需兑换，请去BoxJs设置或者修改脚本coinToBeans\n')
-      }
-      await msgShow();
-      await exchangeGoodsSuccess();
     }
   }
-}
 })()
-  .catch((e) => $.logErr(e))
-  .finally(() => $.done())
+.catch((e) => $.logErr(e))
+.finally(() => $.done())
+
 async function PrizeIndex() {
   await smtg_queryPrize();
   // await smtg_materialPrizeIndex();//兑换酒类奖品，此兑换API与之前的兑换京豆类的不一致，故目前无法进行
