@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-04 13:11:59 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-07 11:20:03
+ * @Last Modified time: 2021-02-12 19:31:34
  * 
  * 剑三通宝红包
  * 
@@ -24,26 +24,26 @@ const $ = new Env("剑三通宝红包")
 // jx3hb = '小年夜快乐'
 // ------------------------------🕛2月11日 除夕--------------------------------
 // 12：00 郭炜炜
-jx3hb = '1'
+// jx3hb = '除旧迎新年'
 // 15:00 官博
-// jx3hb = ''
+// jx3hb = '年夜饭吃啥'
 // 16:00 同人秀
-// jx3hb = ''
+// jx3hb = '老公贴贴'
 // 17:00 客户服务
-// jx3hb = ''
+// jx3hb = '今天开服了吗'
 // 19:00 咸鱼
-// jx3hb = ''
+// jx3hb = '上线一起吃年夜饭'
 // ------------------------------🕛2月12日 春节--------------------------------
 // 12：00 郭炜炜
-// jx3hb = ''
+// jx3hb = '新春新气象'
 // 15:00 官博
-// jx3hb = ''
+// jx3hb = '回家一起看烟花吧'
 // 16:00 同人秀
-// jx3hb = ''
+// jx3hb = '今年一定产粮'
 // 17:00 客户服务
-// jx3hb = ''
+// jx3hb = '今天不用维护'
 // 19:00 咸鱼
-// jx3hb = ''
+// jx3hb = '新年大吉阖家欢乐'
 // ------------------------------🕛2月26日 元宵节--------------------------------
 // 12：00 郭炜炜
 // jx3hb = ''
@@ -57,28 +57,36 @@ jx3hb = '1'
 // jx3hb = ''
 
 
+// nowTimeStamp = ''
 
 const CookiesArr = []
 
 const role_nameArr =[]
 
 !(async () => {
+
+  // getTime()
+  // await $.wait(100)
+
   // 查找用户信息
   for(let i=0;i<CookiesArr.length;i++){
     await $.wait(100)
     nowCookie = CookiesArr[i]
+    await $.wait(100)
     await  getUserInfo()
   }
+  
   // 获得通宝
   for(let j=0;j<CookiesArr.length;j++){
     await $.wait(100)
     nowCookie = CookiesArr[j]
     await $.wait(100)
     nowrole_name = role_nameArr[j]
+    await $.wait(100)
     await GetHB()
   }
 
-})()
+  })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
 
@@ -104,12 +112,13 @@ function GetHB(){
    // get请求 请求地址&请求头 (错误，错误响应数据,成功返回的JSON数据)
    $.get(myRequest, (error, response, data) => {
      if(data){
-      console.log(`----------兑换结果🎁----------`);
+      console.log(`----------兑换结果----------`);
        console.log("通宝反馈数据:"+data);
        temp = JSON.parse(data)
        if(temp.status!==`-20202`||`-20204`){
        let nowname =decodeURI(nowrole_name)
-       console.log(nowname+`获得：`+temp.data.receive_money+`通宝`);
+       console.log(`🎁`+nowname+`获得：`+temp.data.receive_money+`通宝`);
+       $.totalTB=$.totalTB+temp.data.receive_money
        }else{
          console.log(temp.msg);
        }
@@ -154,6 +163,14 @@ function getUserInfo(){
        })
      resolve()
     }) 
+ }
+
+
+ // 获得时间戳
+ function getTime(){
+  nowTimeStp = Date.parse(new Date())
+  console.log(`🕛现在的时间戳：`+nowTimeStp.toString().substr(0,10))
+  $.nowTimeStamp = nowTimeStp
  }
 
 // 登录
