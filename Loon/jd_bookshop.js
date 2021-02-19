@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:28:42 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-08 09:04:59
+ * @Last Modified time: 2021-02-19 14:59:35
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -19,7 +19,7 @@ let cookiesArr = [], cookie = '', message;
 const ACT_ID = 'dz2010100034444201', shareUuid = '28a699ac78d74aa3b31f7103597f8927'
 let ADD_CART = false
 ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS : ADD_CART) : ($.getdata("ADD_CART") ? $.getdata("ADD_CART") : ADD_CART);
-// 加入购物车开关，与东东小窝共享
+// 加入购物车开关，与东东小窝共享 
 
 let inviteCodes = [
   // xin 1ca580746847454f851808856db7e565

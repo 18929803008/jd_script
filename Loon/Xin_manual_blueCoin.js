@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/xin-code 
  * @Date: 2021-01-30 23:43:11 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-08 09:16:35
+ * @Last Modified time: 2021-02-19 15:09:49
  * 
  * ☆自用兑换自定义商品☆
  * 原作者:lxk0301
@@ -373,7 +373,7 @@ function msgShow() {
     if ($.beanscount && ctrTemp) {
       $.msg($.name, ``, `【京东账号${$.index}】${$.nickName}\n${coinToBeans ? `【兑换${$.title}】${ $.beanscount ? `成功，数量：${$.beanscount}个` : $.beanerr}` : "您设置的是不兑换奖品"}`);
       if ($.isNode()) {
-        await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.UserName}\n${coinToBeans ? `【兑换${$.title}】${$.beanscount ? `成功，数量：${$.beanscount}个` : $.beanerr}` : "您设置的是不兑换奖品"}`)
+        await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName}\n${coinToBeans ? `【兑换${$.title}】${$.beanscount ? `成功，数量：${$.beanscount}个` : $.beanerr}` : "您设置的是不兑换奖品"}`)
       }
     }
     resolve()

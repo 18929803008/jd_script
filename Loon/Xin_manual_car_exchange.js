@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-27 13:34:48 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-13 00:02:16
+ * @Last Modified time: 2021-02-19 15:10:01
  * 
  * ☆兑换京豆版☆
  * 原作者:lxk0301
@@ -38,7 +38,6 @@ const JD_API_HOST = 'https://car-member.jd.com/api/';
 
 // 兑换列表
 const showCarExchangeSuccessArr = []
-// 
 
 !(async () => {
   if (!cookiesArr[0]) {
