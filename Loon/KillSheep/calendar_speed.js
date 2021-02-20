@@ -2,13 +2,15 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-26 21:09:52 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-01-30 10:39:51
+ * @Last Modified time: 2021-02-20 16:25:12
  */
 
 const $ = new Env("万年历极速版")
+let index = 0
 
 !(async () => {
-  for(var i =0;i<1000000000;i++){
+  for(var i =0;i<100000000;i++){
+    index = i
   AutoRead()
   await $.wait(100);
 }
@@ -21,8 +23,16 @@ const $ = new Env("万年历极速版")
 function AutoRead(){
  return new Promise((resolve) => { 
    const myRequest = {
-     // 获得奖励URL
-    url: `http://coin.makingmoney.cn:8088/task/award?guid=037A2282-CC50-4F82-9310-17BACDAB885B&task_id=6029&adtask_id=74&ver=1.1.1&systemver=14.2&bid=com.calendar.jishi.app&mt=1&sw=375&sh=667&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=055bb7e865aa346bda1a2860a32e0eb8`,
+    // 福利中心
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=037A2282-CC50-4F82-9310-17BACDAB885B&task_id=6029&adtask_id=74&ver=1.1.1&systemver=14.2&bid=com.calendar.jishi.app&mt=1&sw=375&sh=667&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=055bb7e865aa346bda1a2860a32e0eb8`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=${index}&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=1299c41cedd0246e95ed06ab3f560359`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=74&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=8076e30473ae98311b8c21af279187d9`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=76&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=4d32b4acde420148b0a3a05f5d3ca900`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=73&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=24567dc2409901a231b41102bf0cb03a`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=72&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=3c8bfb56e7603bf0ecb69b9fed8b3312`,
+    // url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6029&adtask_id=71&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=4f366bde554f247b3e3a5afced27ccf3`,
+    // 签到奖励
+    url: `http://coin.makingmoney.cn:8088/task/award?guid=0CDF5067-D3F2-49C7-AB9B-60440A608B49&task_id=6007&ver=1.1.1&systemver=14.3&bid=com.calendar.jishi.app&mt=1&sw=375&sh=812&device=iPhone&idiom=0&chl=AppStore&language=zh-Hans-CN&locale=CN&zone=Asia%2FShanghai&sign=a3d29fa3c45276dda7ca1ee325fc0d4f`,
     headers: {
       // Cookie抓包获取
       'Cookie' : ``,
@@ -37,6 +47,7 @@ function AutoRead(){
   // get请求 请求地址&请求头 (错误，错误响应数据,成功返回的JSON数据)
   $.get(myRequest, (error, response, data) => {
     if(data){
+      console.log("当前任务ID:"+index);
       console.log("相应数据成功:"+data);
     }
      if(error){
