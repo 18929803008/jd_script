@@ -2,10 +2,10 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-11 23:44:47 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-19 15:02:04
+ * @Last Modified time: 2021-02-21 14:46:05
  * 
  * ☆自用助力版☆
- * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_global.js
+ * 原作者地址:https://jdsharedresourcescdn.azureedge.net/jdresource/jd_global.js
  * 活动时间:2021-02-02 至 2021-02-22
  */
 

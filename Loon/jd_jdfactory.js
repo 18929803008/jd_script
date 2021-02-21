@@ -6,7 +6,7 @@
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
- * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_jdfactory.js
+ * 原作者地址:https://jdsharedresourcescdn.azureedge.net/jdresource/jd_jdfactory.js
  */
 
 const $ = new Env('东东工厂');

@@ -6,7 +6,7 @@
  * 
  * ☆兑换京豆版☆
  * 原作者:lxk0301
- * 原作者地址:https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
+ * 原作者地址:https://jdsharedresourcescdn.azureedge.net/jdresource/jd_car_exchange.js
  */
 
 
