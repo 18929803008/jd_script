@@ -1,3 +1,12 @@
+/*
+ * @Author: Xin https://github.com/Xin-code 
+ * @Date: 2021-02-21 11:27:35 
+ * @Last Modified by: Xin 
+ * @Last Modified time: 2021-02-21 11:28:06
+ * 
+ * ☆自用去除邀请版☆
+ * 原作者地址:https://raw.githubusercontent.com/age174/-/main/wnb.js
+ */
 
 const $ = new Env('蜗牛吧');
 let wnburl = $.getdata('wnburl')
