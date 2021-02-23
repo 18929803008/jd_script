@@ -2,12 +2,9 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-20 22:43:07 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-20 22:44:52
+ * @Last Modified time: 2021-02-23 11:17:28
  * 
- * ☆自用助力版☆
- * 原作者:i-chenzhe
  * 原作者地址:https://raw.githubusercontent.com/i-chenzhe/qx/main/jd_fanslove.js
- * 
  */
 
 
@@ -15,8 +12,7 @@ const $ = new Env('粉丝互动');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', originCookie = '', message = '';
-let helpAuthor = false;//为作者助力的开关
-const ACT_ID_List = ['eda317007dff44c2b23e513df195862d', 'f28f6b74a1714451acb7f8b7cdb2527a',];
+let helpAuthor = true;//为作者助力的开关
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -36,6 +32,7 @@ if ($.isNode()) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
   }
+  await getACT_ID();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i]
@@ -56,11 +53,29 @@ if ($.isNode()) {
       if (helpAuthor) {
         new Promise(resolve => { $.get({ url: 'https://api.r2ray.com/jd.bargain/index' }, (err, resp, data) => { try { if (data) { $.dataGet = JSON.parse(data); if ($.dataGet.data.length !== 0) { let opt = { url: `https://api.m.jd.com/client.action`, headers: { 'Host': 'api.m.jd.com', 'Content-Type': 'application/x-www-form-urlencoded', 'Origin': 'https://h5.m.jd.com', 'Accept-Encoding': 'gzip, deflate, br', 'Cookie': cookie, 'Connection': 'keep-alive', 'Accept': 'application/json, text/plain, */*', 'User-Agent': 'jdapp;iPhone;9.4.0;14.3;;network/wifi;ADID/;supportApplePay/0;hasUPPay/0;hasOCPay/0;model/iPhone10,3;addressid/;supportBestPay/0;appBuild/167541;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1', 'Referer': `https://h5.m.jd.com/babelDiy/Zeus/4ZK4ZpvoSreRB92RRo8bpJAQNoTq/index.html?serveId=wxe30973feca923229&actId=${$.dataGet.data[0].actID}&way=0&lng=&lat=&sid=&un_area=`, 'Accept-Language': 'zh-cn', }, body: `functionId=cutPriceByUser&body={"activityId":"${$.dataGet.data[0].actID}","userName":"","followShop":1,"shopId":${$.dataGet.data[0].actsID},"userPic":""}&client=wh5&clientVersion=1.0.0` }; return new Promise(resolve => { $.post(opt, (err, ersp, data) => { }) }); } } } catch (e) { console.log(e); } finally { resolve(); } }) })
       }
-      for (let i = 0; i < ACT_ID_List.length; i++) {
-        $.ACT_ID = ACT_ID_List[i];
-        await fansLove();
+      $.sendNotify = false;
+      $.bean = 0;
+      if ($.ACT_IDarr.length > 0) {
+        for (let i = 0; i < $.ACT_IDarr.length; i++) {
+          $.ACT_ID = $.ACT_IDarr[i].ACT_ID;
+          await fansLove();
+        }
       }
+      if ($.bean >= 10) {
+        if ($.isNode()) {
+          await notify.sendNotify(`${$.name}`, `京东账号${$.index} ${$.UserName}\n恭喜中奖，共获得${$.bean}京豆`);
+        } else {
+          $.msg($.name, `恭喜中奖共获得${$.bean}京豆`);
+        }
+      }
+      if ($.sendNotify) {
+        if ($.isNode()) {
+          await notify.sendNotify(`${$.name}`, `京东账号${$.index} ${$.UserName}\n${message}`);
+        } else {
+          $.msg($.name, `恭喜中奖\n${message}`);
+        }
 
+      }
     }
   }
 })()
@@ -125,16 +140,17 @@ function getActContent(doJob = false) {
             if (doJob) {
               console.log(`开始执行 ${$.actInfo.shopName} 的任务`);
               await doTask('wxFansInterActionActivity/followShop', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}`);
+              await $.wait(5000);
               if ($.task1Sign && $.task1Sign.finishedCount === 0) {
                 await doTask('wxFansInterActionActivity/doSign', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}`);
-                await $.wait(1000);
+                await $.wait(5000);
               }
               if ($.task2BrowGoods && $.task2BrowGoods.finishedCount !== $.task2BrowGoods.upLimit) {
                 for (let vo of $.task2BrowGoods.taskGoodList) {
                   if (vo.finished === false) {
                     await doTask('wxFansInterActionActivity/doBrowGoodsTask', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}&skuId=${vo.skuId}`);
                   }
-                  await $.wait(1000);
+                  await $.wait(5000);
                 }
               }
               if ($.task3AddCart && $.task3AddCart.finishedCount !== $.task3AddCart.upLimit) {
@@ -142,23 +158,23 @@ function getActContent(doJob = false) {
                   if (vo.finished === false) {
                     await doTask('wxFansInterActionActivity/doAddGoodsTask', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}&skuId=${vo.skuId}`);
                   }
-                  await $.wait(1000);
+                  await $.wait(5000);
                 }
               }
               if ($.task4Share && $.task4Share.finishedCount !== $.task4Share.upLimit) {
                 for (let i = 0; i < $.task4Share.upLimit; i++) {
                   await doTask('wxFansInterActionActivity/doShareTask', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}`);
-                  await $.wait(1000);
+                  await $.wait(5000);
                 }
               }
               if ($.task5Remind && $.task5Remind.finishedCount !== $.task5Remind.upLimit) {
                 await doTask('wxFansInterActionActivity/doRemindTask', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}`);
-                await $.wait(1000);
+                await $.wait(5000);
               }
               if ($.task6GetCoupon && $.task6GetCoupon.finishedCount !== $.task6GetCoupon.upLimit) {
                 for (let i = 0; i < $.task6GetCoupon.taskCouponInfoList.length; i++) {
                   await doTask('wxFansInterActionActivity/doGetCouponTask', `activityId=${$.ACT_ID}&uuid=${$.actorInfo.uuid}&couponId=${$.task6GetCoupon.taskCouponInfoList[i].couponId}`);
-                  await $.wait(1000);
+                  await $.wait(5000);
                 }
               }
               if ($.task7MeetPlaceVo && $.task7MeetPlaceVo.finishedCount !== $.task7MeetPlaceVo.upLimit) {
@@ -195,14 +211,25 @@ function doTask(function_name, body) {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
         } else {
-          data = JSON.parse(data);
-          if (resp['headers']['set-cookie']) {
-            cookie = `${resp['headers']['set-cookie'].join(';')}; ${originCookie}`;
-          }
-          if (data.result === true) {
-            console.log('请求正常。')
-          } else {
-            console.log(data.errorMessage)
+          if (safeGet(data)) {
+            data = JSON.parse(data);
+            if (resp['headers']['set-cookie']) {
+              cookie = `${resp['headers']['set-cookie'].join(';')}; ${originCookie}`;
+            }
+            if (data.data !== null && data.result === true) {
+              console.log('请求正常。')
+              if (data.data.hasOwnProperty('drawOk')) {
+                if (data.data.drawOk === true) {
+                  console.log(`恭喜中奖，获得:${data.data.name}`);
+                  if (data.data.name.indexOf('京豆')) {
+                    $.bean += data.data.drawInfo.beanNum;
+                  } else {
+                    $.sendNotify = true;
+                    message += `恭喜中奖，获得:${data.data.name}\n活动店铺${$.actInfo.shopName}\n领奖地址:https://lzkjdz-isv.isvjcloud.com/wxFansInterActionActivity/activity/${$.ACT_ID}?activityId=${$.ACT_ID}&adsource=tg_storePage`;
+                  }
+                }
+              }
+            }
           }
         }
       } catch (e) {
@@ -407,6 +434,31 @@ function taskPostUrl(function_id, body) {
     },
     body: body,
   }
+}
+function getACT_ID() {
+  return new Promise(async resolve => {
+    $.get({ url: `https://api.r2ray.com/jd.fanslove/index?ts=${Date.now()}` }, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+        } else {
+          if (data) {
+            data = JSON.parse(data);
+            if (data.data.length > 0) {
+              $.ACT_IDarr = data.data;
+              console.log('获取活动信息成功');
+            } else {
+              $.ACT_IDarr = [];
+            }
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+  })
 }
 function TotalBean() {
   return new Promise(async resolve => {
