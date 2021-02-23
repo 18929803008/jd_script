@@ -2,9 +2,8 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-02-21 16:24:02 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-21 17:14:21
+ * @Last Modified time: 2021-02-23 08:32:26
  */
-
 
 const $ = new Env("JX3BOX剑三数据库")
 
@@ -20,19 +19,14 @@ const $ = new Env("JX3BOX剑三数据库")
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
 
+// 数据库BUFF
 function GetDatabase(){
   return new Promise((resolve) => { 
     const myRequest = {
       // 请求地址
       // https://node.jx3box.com/buff/id/${$buffID}
      url: `https://node.jx3box.com/buff/id/${index}`,
-     headers: {
-       'Cookie' : `token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE3NSwiZ3JvdXAiOjEsIm5hbWUiOiLkuZ3lqITnmoTngbXom4ciLCJzdGF0dXMiOjAsImJpbmRfd3giOjAsImlhdCI6MTYxMjE0OTM5OSwiZXhwIjoxNjE0NzQxMzk5fQ.IIzXavMH2fKG7TaPFCFhRuUDlb7edtd1v00vyk84z1w; token.sig=LRaV-irH54-Aiju8pVFB_KRrSE0; seasun_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjE3NSwiZ3JvdXAiOjEsIm5hbWUiOiLkuZ3lqITnmoTngbXom4ciLCJzdGF0dXMiOjAsImJpbmRfd3giOjAsImlhdCI6MTYxMjE0OTM5OSwiZXhwIjoxNjE0NzQxMzk5fQ.AKd2Yv4FWhHwwtznKpux0AlnT18t3bKlQZC__0tIv-0; seasun_token.sig=0mQ4M_5cXS3gtZF00OoDoWLGRl4`,
-       'Accept-Encoding' : `gzip, deflate, br`,
-       'Accept' : `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9`,
-       'User-Agent' : `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36`,
-       'Accept-Language' : `text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9`
-     },
+     headers: {},
  };
    // get请求 请求地址&请求头 (错误，错误响应数据,成功返回的JSON数据)
    $.get(myRequest, (error, response, data) => {
