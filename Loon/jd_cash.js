@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-19 15:00:04
+ * @Last Modified time: 2021-02-26 17:15:05
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -33,13 +33,7 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  let cookiesData = $.getdata('CookiesJD') || "[]";
-  cookiesData = jsonParse(cookiesData);
-  cookiesArr = cookiesData.map(item => item.cookie);
-  cookiesArr.reverse();
-  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
-  cookiesArr.reverse();
-  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
+  cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 !(async () => {
@@ -81,7 +75,7 @@ async function jdCash() {
   await shareCodesFormat()
   await helpFriends()
   await index(true)
-  // await getReward()
+  await getReward()
   await showMsg()
 }
 function index(info=false) {
@@ -105,7 +99,7 @@ function index(info=false) {
                 'shareDate': data.data.result.shareDate
               }
               $.shareDate = data.data.result.shareDate;
-              $.log(`shareDate: ${$.shareDate}`)
+              // $.log(`shareDate: ${$.shareDate}`)
               // console.log(helpInfo)
               for(let task of data.data.result.taskInfos){
                 if (task.type === 4) {
@@ -149,14 +143,6 @@ async function helpFriends() {
     if(!$.canHelp) break
     await $.wait(1000)
   }
-  // if (helpAuthor && $.authorCode) {
-  //   for(let helpInfo of $.authorCode){
-  //     console.log(`去帮助好友${helpInfo['inviteCode']}`)
-  //     await helpFriend(helpInfo)
-  //     if(!$.canHelp) break
-  //     await $.wait(1000)
-  //   }
-  // }
 }
 function helpFriend(helpInfo) {
   return new Promise((resolve) => {
@@ -285,8 +271,6 @@ function shareCodesFormat() {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
-      let authorCode = deepCopy($.authorCode)
-      $.newShareCodes = [...(authorCode.map((item, index) => authorCode[index] = item['inviteCode'])), ...$.newShareCodes];
     }
     const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
@@ -384,7 +368,11 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            if (data['retcode'] === 0) {
+              $.nickName = data['base'].nickname;
+            } else {
+              $.nickName = $.UserName
+            }
           } else {
             console.log(`京东服务器返回空数据`)
           }

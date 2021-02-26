@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-26 19:10:44 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-19 15:03:33
+ * @Last Modified time: 2021-02-26 17:19:48
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -12,7 +12,7 @@
 const $ = new Env('闪购盲盒');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-let appId = '1EFRRxA' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
+let appId = '1EFRXxg' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
   // xin T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA
@@ -33,13 +33,7 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  let cookiesData = $.getdata('CookiesJD') || "[]";
-  cookiesData = jsonParse(cookiesData);
-  cookiesArr = cookiesData.map(item => item.cookie);
-  cookiesArr.reverse();
-  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
-  cookiesArr.reverse();
-  cookiesArr = cookiesArr.filter(item => item !== "" && item !== null && item !== undefined);
+  cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
@@ -100,8 +94,6 @@ function interact_template_getHomeData(timeout = 0) {
           data = JSON.parse(data);
           if (data.data.bizCode !== 0) {
             console.log(data.data.bizMsg);
-            merge.jdBeans.fail++;
-            merge.jdBeans.notify = `${data.data.bizMsg}`;
             return
           }
           scorePerLottery = data.data.result.userInfo.scorePerLottery||data.data.result.userInfo.lotteryMinusScore
@@ -110,7 +102,7 @@ function interact_template_getHomeData(timeout = 0) {
           for (let i = 0;i < data.data.result.taskVos.length;i ++) {
             console.log("\n" + data.data.result.taskVos[i].taskType + '-' + data.data.result.taskVos[i].taskName  + '-' + (data.data.result.taskVos[i].status === 1 ? `已完成${data.data.result.taskVos[i].times}-未完成${data.data.result.taskVos[i].maxTimes}` : "全部已完成"))
             //签到
-            if (data.data.result.taskVos[i].taskName === '邀人助力任务') {
+            if (data.data.result.taskVos[i].taskName === '邀请好友助力') {
               console.log(`您的好友助力码为:${data.data.result.taskVos[i].assistTaskDetailVo.taskToken}`)
               for (let code of $.newShareCodes) {
                 if (!code) continue
@@ -360,7 +352,11 @@ function TotalBean() {
               $.isLogin = false; //cookie过期
               return
             }
-            $.nickName = data['base'].nickname;
+            if (data['retcode'] === 0) {
+              $.nickName = data['base'].nickname;
+            } else {
+              $.nickName = $.UserName
+            }
           } else {
             console.log(`京东服务器返回空数据`)
           }
