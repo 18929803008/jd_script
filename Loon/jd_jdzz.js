@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:17:51 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-26 17:19:00
+ * @Last Modified time: 2021-03-06 22:56:12
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -31,6 +31,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const inviteCodes = [
   `AUWE5mq3DzWYND2j62XsclQ@AUWE5m63Cyz1aCmmqj3VDkg@AUWE5mf_GymNZC2H_jHsYwQ@AUWE52e3jm395fjK9pRUp`,
   `AUWE5mq3DzWYND2j62XsclQ@AUWE5m63Cyz1aCmmqj3VDkg@AUWE5mf_GymNZC2H_jHsYwQ@AUWE52e3jm395fjK9pRUp`,
+  `AUWE5mq3DzWYND2j62XsclQ@AUWE5m63Cyz1aCmmqj3VDkg`,
 ]
 !(async () => {
   $.tuanList = []

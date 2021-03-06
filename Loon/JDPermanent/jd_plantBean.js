@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 14:45:29 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-05 09:03:24
+ * @Last Modified time: 2021-03-06 22:47:39
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -22,9 +22,10 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
                    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'mlrdw3aw26j3xtlnoc5rovsdcl364xjx4ctvrhq@e7lhibzb3zek2volndkiirtldf2etf3cbfqgk5y@olmijoxgmjutydzvmwfbl6e6l6h2cth3aj3eb4q@gou7sxm3hztwog43s4wlioc4zwmle4lerqaqbky',
+  'mlrdw3aw26j3xtlnoc5rovsdcl364xjx4ctvrhq@e7lhibzb3zek2volndkiirtldf2etf3cbfqgk5y@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@olmijoxgmjutydzvmwfbl6e6l6h2cth3aj3eb4q@gou7sxm3hztwog43s4wlioc4zwmle4lerqaqbky',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'mlrdw3aw26j3xtlnoc5rovsdcl364xjx4ctvrhq@e7lhibzb3zek2volndkiirtldf2etf3cbfqgk5y@olmijoxgmjutydzvmwfbl6e6l6h2cth3aj3eb4q@gou7sxm3hztwog43s4wlioc4zwmle4lerqaqbky',
+  'mlrdw3aw26j3xtlnoc5rovsdcl364xjx4ctvrhq@e7lhibzb3zek2volndkiirtldf2etf3cbfqgk5y@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@olmijoxgmjutydzvmwfbl6e6l6h2cth3aj3eb4q@gou7sxm3hztwog43s4wlioc4zwmle4lerqaqbky',
+  'mlrdw3aw26j3xtlnoc5rovsdcl364xjx4ctvrhq@e7lhibzb3zek2volndkiirtldf2etf3cbfqgk5y@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@olmijoxgmjutydzvmwfbl6e6l6h2cth3aj3eb4q@gou7sxm3hztwog43s4wlioc4zwmle4lerqaqbky',
 ]
 let currentRoundId = null;//本期活动id
 let lastRoundId = null;//上期id

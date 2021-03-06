@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:22:19 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-26 17:16:46
+ * @Last Modified time: 2021-03-06 22:51:51
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -21,10 +21,12 @@ let cookiesArr = [], cookie = '', message = '';
 const inviteCodes = [
   // xin 4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE
   // 宝 qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE
+  // d ButrTtQU6QUlZ_Pc7gJUyqt9zd5YaBeE
   // ksy sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE
   // ksyd 2AxO9_8nIcYf8ITfyXlpcg==
-  '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
-  '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
+  '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@ButrTtQU6QUlZ_Pc7gJUyqt9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
+  '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@ButrTtQU6QUlZ_Pc7gJUyqt9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
+  '4hcydYCP_3SVJFTBkKtsLKt9zd5YaBeE@qNOtcKihtPlqVT188Rh9_6t9zd5YaBeE@ButrTtQU6QUlZ_Pc7gJUyqt9zd5YaBeE@sRQ2jh_ETvfB8zU3_op5Rqt9zd5YaBeE@2AxO9_8nIcYf8ITfyXlpcg==',
 ];
 
 const randomCount = $.isNode() ? 10 : 5;

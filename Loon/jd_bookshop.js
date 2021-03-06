@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:28:42 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-26 17:13:00
+ * @Last Modified time: 2021-03-06 22:55:51
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -28,6 +28,7 @@ let inviteCodes = [
   // ksyd 41c71dfe7059417da809d45cb237c9d0
   '1ca580746847454f851808856db7e565@753bbeeac19c447f9358455e444d0de3@9938133d5dc24454ab3a432564fd7e7c@41c71dfe7059417da809d45cb237c9d0',
   '1ca580746847454f851808856db7e565@753bbeeac19c447f9358455e444d0de3@9938133d5dc24454ab3a432564fd7e7c@41c71dfe7059417da809d45cb237c9d0',
+  '1ca580746847454f851808856db7e565@753bbeeac19c447f9358455e444d0de3',
 ]
 
 if ($.isNode()) {

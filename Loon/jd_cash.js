@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 15:25:28 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-26 17:15:05
+ * @Last Modified time: 2021-03-06 22:56:13
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -21,10 +21,12 @@ const randomCount = $.isNode() ? 20 : 5;
 const inviteCodes = [
   // xin eU9YaezhZq8j9mbXz3RF1g
   // 宝 eU9YaOzgYPR082eHmXoa0Q
+  // d eU9YaeW3Y_Ul8zrXmHoQ1A
   // ksy eU9Yar7kYap38m_SmnRBgg
   // ksyd eU9YKqzBMLZXhzyQsxpw
-  `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
-  `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
+  `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9YaeW3Y_Ul8zrXmHoQ1A@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
+  `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9YaeW3Y_Ul8zrXmHoQ1A@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
+  `eU9YaezhZq8j9mbXz3RF1g@eU9YaOzgYPR082eHmXoa0Q@eU9YaeW3Y_Ul8zrXmHoQ1A@eU9Yar7kYap38m_SmnRBgg@eU9YKqzBMLZXhzyQsxpw`,
 ]
 
 if ($.isNode()) {

@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 14:42:09 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-05 09:04:29
+ * @Last Modified time: 2021-03-06 22:52:09
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -16,9 +16,10 @@ let cookiesArr = [], cookie = '', jdFruitShareArr = [], isBox = false, notify, n
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // 这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
+  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
+  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
+  `554359d55fcc4a1fab5f17a946cbf338@4625d3914d044bacbae685e9d60f14c8@mlrdw3aw26j3wvnay4ajnw4moeycdsvyin6ytpq@edf5df477f3e4c45960909255988b345@dfb7e6bd0c3649d69d4f61c41a382675`,
 ]
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;

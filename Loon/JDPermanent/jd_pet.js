@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-16 14:48:00 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-05 09:03:22
+ * @Last Modified time: 2021-03-06 22:47:15
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -16,9 +16,10 @@ let cookiesArr = [], cookie = '', jdPetShareArr = [], isBox = false, notify, new
 //下面给出两个账号的填写示例（iOS只支持2个京东账号）
 let shareCodes = [ // IOS本地脚本用户这个列表填入你要助力的好友的shareCode
    //账号一的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTE1NDQ5MzYwMDAwMDAwMzkwMTMzNTk=@MTAxODEyMjkxMDAwMDAwMDQwMDQ5ODU5@MTE1NDAxNzgwMDAwMDAwNDE2NTU0Nzk=@MTE1NDQ5MzYwMDAwMDAwNDI0MDQ1NzM=',
+  'MTE1NDQ5MzYwMDAwMDAwMzkwMTMzNTk=@MTAxODEyMjkxMDAwMDAwMDQwMDQ5ODU5@MTE1NDUwMTI0MDAwMDAwMDQ0MDA1MDAz@MTE1NDAxNzgwMDAwMDAwNDE2NTU0Nzk=@MTE1NDQ5MzYwMDAwMDAwNDI0MDQ1NzM=',
   //账号二的好友shareCode,不同好友的shareCode中间用@符号隔开
-  'MTE1NDQ5MzYwMDAwMDAwMzkwMTMzNTk=@MTAxODEyMjkxMDAwMDAwMDQwMDQ5ODU5@MTE1NDAxNzgwMDAwMDAwNDE2NTU0Nzk=@MTE1NDQ5MzYwMDAwMDAwNDI0MDQ1NzM=',
+  'MTE1NDQ5MzYwMDAwMDAwMzkwMTMzNTk=@MTAxODEyMjkxMDAwMDAwMDQwMDQ5ODU5@MTE1NDUwMTI0MDAwMDAwMDQ0MDA1MDAz@MTE1NDAxNzgwMDAwMDAwNDE2NTU0Nzk=@MTE1NDQ5MzYwMDAwMDAwNDI0MDQ1NzM=',
+  'MTE1NDQ5MzYwMDAwMDAwMzkwMTMzNTk=@MTAxODEyMjkxMDAwMDAwMDQwMDQ5ODU5@MTE1NDUwMTI0MDAwMDAwMDQ0MDA1MDAz@MTE1NDAxNzgwMDAwMDAwNDE2NTU0Nzk=@MTE1NDQ5MzYwMDAwMDAwNDI0MDQ1NzM=',
 ]
 let message = '', subTitle = '', option = {};
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送

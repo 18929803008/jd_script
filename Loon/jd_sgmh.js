@@ -2,7 +2,7 @@
  * @Author: Xin https://github.com/Xin-code 
  * @Date: 2021-01-26 19:10:44 
  * @Last Modified by: Xin 
- * @Last Modified time: 2021-02-26 17:19:48
+ * @Last Modified time: 2021-03-06 22:56:50
  * 
  * ☆自用助力版☆
  * 原作者:lxk0301
@@ -21,6 +21,7 @@ const inviteCodes = [
   // ksyd T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA
   `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWmIaW5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA`,
   `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA@T0225KkcRkxP8gKGIxvzxfBYIACjVWmIaW5kRrbA@T0205KkcBl5qox6mVkix7J5pCjVWmIaW5kRrbA`,
+  `T0225KkcRR5K9QfSJxL2kPBcdACjVWmIaW5kRrbA@T0225KkcRB5L81yFIhOmxv4DcwCjVWmIaW5kRrbA`,
 ];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
